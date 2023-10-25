@@ -1,0 +1,89 @@
+<!-- lead-details.component.html -->
+<div class="container mt-4">
+  <div class="accordion" id="leadAccordion">
+
+    <!-- Lead Information Accordion -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="leadInfoHeading">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#leadInfoCollapse"
+          aria-expanded="true" aria-controls="leadInfoCollapse">
+          Account Information
+        </button>
+      </h2>
+      <div id="leadInfoCollapse" class="accordion-collapse collapse show" aria-labelledby="leadInfoHeading">
+        <div class="accordion-body">
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Company Name</label>
+              <p>{{ account.companyName }}</p>
+              <!-- <p>Company Name:<span *ngIf="!editMode" (click)="editMode = true">{{ account.companyName }}</span></p>
+
+            <input type="text" *ngIf="editMode" [(ngModel)]="account.companyName" (keyup.enter)="saveAll()"> -->
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Email</label>
+              <p>{{ account.email }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Phone</label>
+              <p>{{ account.phone }}</p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Website</label>
+              <p>{{ account.website }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Type of Business</label>
+              <p>{{ account.typeOfBusiness }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Type of Account</label>
+              <p>{{ account.typeOfAccount }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Active</label>
+              <p>{{ account.active }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Address Information Accordion -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="addressInfoHeading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#addressInfoCollapse" aria-expanded="false" aria-controls="addressInfoCollapse">
+          Address Information
+        </button>
+      </h2>
+      <div id="addressInfoCollapse" class="accordion-collapse collapse" aria-labelledby="addressInfoHeading">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Address</label>
+              <p>{{ account.address }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">State</label>
+              <p>{{ account.state }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Region</label>
+              <p>{{ account.region }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Additional Information Accordion -->
+
+
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<!-- grid -->
+<div class="container mt-4">
+  <form [formGroup]="opportunityForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="mb-3">
+          <label for="required_quantity" class="form-label">Required Quantity</label>
+          <input type="number" class="form-control" id="requiredQuantity" formControlName="requiredQuantity" min="1">
+        </div>
+
+        <div class="mb-3">
+          <label for="products" class="form-label">Products</label>
+          <select class="form-select" id="products" formControlName="products">
+            <option value="Accounting software">Accounting software</option>
+            <option value="Cloud services">Cloud services</option>
+            <option value="Communication software">Communication software</option>
+            <option value="Content management software">Content management software</option>
+            <option value="Customer service platforms">Customer service platforms</option>
+            <option value="Analytics">Analytics</option>
+            <option value="Cloud storage">Cloud storage</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="status" class="form-label">Status</label>
+          <select class="form-select" id="status" formControlName="status">
+            <option value="Qualified">Qualified</option>
+            <option value="Proposition">Proposition</option>
+            <option value="Negotiation">Negotiation</option>
+            <option value="closed Won">closed Won</option>
+            <option value="closed Lost">closed Lost</option>
+          </select>
+        </div>
+
+
+
+        <!-- Add other fields for the first column here -->
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="accountName" class="form-label">Account Name</label>
+            <input type="text" class="form-control" id="accountName" formControlName="accountName">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="expectedRevenue" class="form-label">Expected Revenue</label>
+          <input type="number" class="form-control" id="expectedRevenue" formControlName="expectedRevenue" step="0.01"
+            min="0">
+        </div>
+
+        <div class="mb-3">
+          <label for="expectedClosingDate" class="form-label"> Closing Date</label>
+          <input type="date" class="form-control" id="expectedClosingDate" formControlName="expectedClosingDate">
+        </div>
+
+
+        <div class="mb-3">
+          <label for="probability" class="form-label">Probability</label>
+          <input type="number" class="form-control" id="probability" formControlName="probability" step="0.01" min="0"
+            max="1">
+        </div>
+
+        <div class="mb-3">
+          <label for="source" class="form-label">Source</label>
+          <select class="form-select" id="source" formControlName="source">
+            <option value="Web">Web</option>
+            <option value="Phone Inquiry">Phone Inquiry</option>
+            <option value="Referral">Referral</option>
+          </select>
+        </div>
+        <!-- Add other fields for the second column here -->
+      </div>
+    </div>
+
+    <!-- Repeat the row and column structure for other sections of the form -->
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
