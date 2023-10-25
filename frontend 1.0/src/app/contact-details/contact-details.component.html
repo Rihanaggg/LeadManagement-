@@ -1,0 +1,113 @@
+<div class="container mt-4">
+  <div class="accordion" id="leadAccordion">
+
+    <!-- Lead Information Accordion -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="leadInfoHeading">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#leadInfoCollapse"
+          aria-expanded="true" aria-controls="leadInfoCollapse">
+          Contact Information
+        </button>
+      </h2>
+      <div id="leadInfoCollapse" class="accordion-collapse collapse show" aria-labelledby="leadInfoHeading">
+        <div class="accordion-body">
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Name</label>
+              <p>{{ contact.name }}</p> -->
+
+              <p>Name: <span *ngIf="!editMode" (click)="editMode = true">{{ contact.name }}</span></p>
+
+              <input type="text" *ngIf="editMode" [(ngModel)]="contact.name" (keyup.enter)="saveAll()">
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Email</label>
+              <p>{{ contact.email }}</p> -->
+
+              <p>Eamil: <span *ngIf="!editMode" (click)="editMode = true">{{ contact.email }}</span></p>
+
+            <input type="text" *ngIf="editMode" [(ngModel)]="contact.email" (keyup.enter)="saveAll()">
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Phone</label>
+              <p>{{ contact.phone }}</p> -->
+
+              <p>Phone: <span *ngIf="!editMode" (click)="editMode = true">{{ contact.phone }}</span></p>
+
+            <input type="text" *ngIf="editMode" [(ngModel)]="contact.phone" (keyup.enter)="saveAll()">
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Address Information Accordion -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="addressInfoHeading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#addressInfoCollapse" aria-expanded="false" aria-controls="addressInfoCollapse">
+          Other Information
+        </button>
+      </h2>
+      <div id="addressInfoCollapse" class="accordion-collapse collapse" aria-labelledby="addressInfoHeading">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Account Name</label>
+              <p>{{ contact.accountName }}</p> -->
+              <p>Account Name:<span *ngIf="!editMode" (click)="editMode = true">{{ contact.accountName }}</span></p>
+
+            <input type="text" *ngIf="editMode" [(ngModel)]="contact.accountName" (keyup.enter)="saveAll()">
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Jon Title</label>
+              <p>{{ contact.jobTitle }}</p> -->
+              <p>Job Title: <span *ngIf="!editMode" (click)="editMode = true">{{ contact.jobTitle }}</span></p>
+
+              <input type="text" *ngIf="editMode" [(ngModel)]="contact.jobTitle" (keyup.enter)="saveAll()">
+
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Lead Source</label>
+              <p>{{ contact.leadSource }}</p> -->
+              <p>Lead Source: <span *ngIf="!editMode" (click)="editMode = true">{{ contact.leadSource }}</span></p>
+
+              <select *ngIf="editMode" [(ngModel)]="contact.leadSource" (change)="saveAll()" class="form-select" >
+                <option value="Web">Web</option>
+                <option value="Phone Inquiry">Phone Inquiry</option>
+                <option value="Referral">Referral</option>
+              </select>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

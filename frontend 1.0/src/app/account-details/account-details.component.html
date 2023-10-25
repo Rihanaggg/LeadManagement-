@@ -1,0 +1,154 @@
+<!-- lead-details.component.html -->
+<div class="container mt-4">
+  <div class="accordion" id="leadAccordion">
+
+    <!-- Lead Information Accordion -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="leadInfoHeading">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#leadInfoCollapse"
+          aria-expanded="true" aria-controls="leadInfoCollapse">
+          Account Information
+        </button>
+      </h2>
+      <div id="leadInfoCollapse" class="accordion-collapse collapse show" aria-labelledby="leadInfoHeading">
+        <div class="accordion-body">
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Company Name</label>
+              <p>{{ account.companyName }}</p> -->
+              <p>Company Name:<span *ngIf="!editMode" (click)="editMode = true">{{ account.companyName }}</span></p>
+
+            <input type="text" *ngIf="editMode" [(ngModel)]="account.companyName" (keyup.enter)="saveAll()">
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Email</label>
+              <p>{{ account.email }}</p> -->
+
+              <p>Eamil: <span *ngIf="!editMode" (click)="editMode = true">{{ account.email }}</span></p>
+
+              <input type="text" *ngIf="editMode" [(ngModel)]="account.email" (keyup.enter)="saveAll()">
+
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Phone</label>
+              <p>{{ account.phone }}</p> -->
+
+              <p>Phone: <span *ngIf="!editMode" (click)="editMode = true">{{ account.phone }}</span></p>
+
+              <input type="text" *ngIf="editMode" [(ngModel)]="account.phone" (keyup.enter)="saveAll()">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Website</label>
+              <p>{{ account.website }}</p> -->
+
+              <p>Website: <span *ngIf="!editMode" (click)="editMode = true">{{ account.website }}</span></p>
+
+              <input type="text" *ngIf="editMode" [(ngModel)]="account.website" (keyup.enter)="saveAll()">
+
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Type of Business</label>
+              <p>{{ account.typeOfBusiness }}</p> -->
+
+              <p>Type of Business: <span *ngIf="!editMode" (click)="editMode = true">{{ account.typeOfBusiness }}</span></p>
+
+          <input type="text" *ngIf="editMode" [(ngModel)]="account.typeOfBusiness" (keyup.enter)="saveAll()">
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Type of Account</label>
+              <p>{{ account.typeOfAccount }}</p> -->
+
+              <p>
+                Type Of Account:
+                <span *ngIf="!editMode" (click)="editMode = true">{{ account.typeOfAccount }}</span>
+              </p>
+
+              <select *ngIf="editMode" [(ngModel)]="account.typeOfAccount" (change)="saveAll()" class="form-select">
+                <option value="Prospect">Prospect</option>
+                <option value="Customer">Customer</option>
+                <option value="Partner">Partner</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Active</label>
+              <p>{{ account.active }}</p> -->
+
+              <p>
+                Active:
+                <span *ngIf="!editMode" (click)="editMode = true">{{ account.active }}</span>
+              </p>
+
+              <select *ngIf="editMode" [(ngModel)]="account.active" (change)="saveAll()" class="form-select">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Address Information Accordion -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="addressInfoHeading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#addressInfoCollapse" aria-expanded="false" aria-controls="addressInfoCollapse">
+          Address Information
+        </button>
+      </h2>
+      <div id="addressInfoCollapse" class="accordion-collapse collapse" aria-labelledby="addressInfoHeading">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Address</label>
+              <p>{{ account.address }}</p> -->
+
+              <p>Address: <span *ngIf="!editMode" (click)="editMode = true">{{ account.address }}</span></p>
+
+            <input type="text" *ngIf="editMode" [(ngModel)]="account.address" (keyup.enter)="saveAll()">
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">State</label>
+              <p>{{ account.state }}</p> -->
+
+              <p>State: <span *ngIf="!editMode" (click)="editMode = true">{{ account.state }}</span></p>
+
+            <input type="text" *ngIf="editMode" [(ngModel)]="account.state" (keyup.enter)="saveAll()">
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <!-- <label class="form-label">Region</label>
+              <p>{{ account.region }}</p> -->
+
+              <p>
+                Region:
+                <span *ngIf="!editMode" (click)="editMode = true">{{ account.region }}</span>
+              </p>
+
+              <select *ngIf="editMode" [(ngModel)]="account.region" (change)="saveAll()" class="form-select">
+                <option value="East">East</option>
+                <option value="West">West</option>
+                <option value="North">North</option>
+                <option value="South">South</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Additional Information Accordion -->
+
+
+  </div>
+</div>
