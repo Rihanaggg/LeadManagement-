@@ -1,4 +1,5 @@
-<!-- <div>
+<div class="chart-container">
+  <!-- Line Chart -->
   <canvas baseChart
           [datasets]="lineChartData"
           [labels]="lineChartLabels"
@@ -6,11 +7,58 @@
           [legend]="true"
           [type]="'line'">
   </canvas>
+
+  <!-- Pie Chart -->
+  <canvas baseChart
+          [datasets]="pieChartData"
+          [labels]="pieChartLabels"
+          [options]="pieChartOptions"
+          [legend]="pieChartLegend"
+          [type]="pieChartType">
+  </canvas>
+</div>
+
+<!-- Bar Chart -->
+<div class="chart-container">
+  <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [type]="barChartType">
+  </canvas>
+
+<!-- Doughnut chart -->
+  <canvas baseChart
+          [datasets]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [options]="doughnutChartOptions"
+          [legend]="doughnutChartLegend"
+          [type]="doughnutChartType">
+  </canvas>
+</div>
+
+
+
+
+
+
+
+
+<!-- Pie Chart -->
+<!-- <div style="display: block;">
+  <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [type]="pieChartType"
+          [options]="pieChartOptions"
+          [legend]="pieChartLegend">
+  </canvas>
 </div> -->
 
+<!-- static line grapg -->
 
-
-<div class="chart-container">
+<!-- <div class="chart-container">
   <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [type]="'line'"></canvas>
 </div>
 <ul class="chart-legend">
@@ -18,21 +66,10 @@
     <div class="chart-legend-color" [style.background-color]="dataSet.backgroundColor"></div>
     {{ dataSet.label }}
   </li>
-</ul>
-<!-- pie chart -->
+</ul> -->
 
-
-  <!-- <div class="chart-container">
-    <canvas baseChart
-            [data]="pieChartData"
-            [labels]="pieChartLabels"
-            [options]="pieChartOptions"
-            [type]="pieChartType"
-            [legend]="pieChartLegend">
-    </canvas>
-  </div> -->
-<!-- bar graph -->
-<div class="chart-container">
+<!--static bar graph -->
+<!-- <div class="chart-container">
     <canvas baseChart
             [datasets]="barChartData"
             [labels]="barChartLabels"
@@ -40,6 +77,6 @@
             [legend]="barChartLegend"
             [type]="barChartType">
     </canvas>
-  </div>
+  </div> -->
 
 

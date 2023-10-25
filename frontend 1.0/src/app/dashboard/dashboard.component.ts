@@ -1,57 +1,96 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChartDataset, ChartOptions, ChartType } from 'chart.js';
+import { interval } from 'rxjs';
+import { DashboardService } from '../service/DashboardService';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+
+  leadProbabilities: number[] = [];
+  statusCounts: any = {};
+
+
   public lineChartData: ChartDataset[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
+    { data: [], label: 'Probability Analysis' },
   ];
 
-  public lineChartLabels: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartLabels: string[] = [];
 
   public lineChartOptions: ChartOptions = {
     responsive: true,
   };
 
-
-  // pie chart
-
-
-// public pieChartOptions: ChartOptions = {
-//   responsive: true,
-// };
-
-// public pieChartLabels: string[] = ['Red', 'Green', 'Blue'];
-// public pieChartData: number[] = [300, 500, 100];
-// public pieChartType: ChartType = 'pie';
-// public pieChartLegend = true;
+  public pieChartOptions: ChartOptions = {
+    responsive: true,
+  };
 
 
-// public pieChartOptions: ChartOptions = {
-//   responsive: true,
-// };
+  public pieChartData: ChartDataset[] = [];
+  public pieChartLabels: string[] = [];
 
-// public pieChartLabels: string[] = ['Red', 'Green', 'Blue'];
-// public pieChartData: ChartDataSets[] = [
-//   { data: [300, 500, 100], backgroundColor: ['#FF5733', '#33FF57', '#3366FF'], label: 'Series A' }
-// ];
-// public pieChartType: ChartType = 'pie';
-// public pieChartLegend = true;
-// }
+  public pieChartType: ChartType = 'pie';
+  public pieChartLegend = true;
+
+  public barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+
+  public barChartData: ChartDataset[] = [
+    { data: [], label: 'Products Count' },
+  ];
+
+  public barChartLabels: string[] = [];
+
+  public barChartType: ChartType = 'bar';
+  public barChartLegend = true;
+
+  public doughnutChartOptions: ChartOptions = {
+    responsive: true,
+    aspectRatio: 1, // Set the aspect ratio to make it a circle
+    //cutout: '70%', // Adjust the size of the center hole
+  };
+
+  public doughnutChartData: ChartDataset[] = [];
+  public doughnutChartLabels: string[] = [];
+
+  public doughnutChartType: ChartType = 'doughnut';
+  public doughnutChartLegend = true;
+
+  constructor(private dashboardService: DashboardService) { }
+
+  ngOnInit(): void {
+    interval(1000) // Poll every 1 seconds (adjust as needed)
+      .subscribe(() => {
+        this.dashboardService.getAllLeadProbabilities().subscribe(data => {
+          this.leadProbabilities = data;
+          this.lineChartData[0].data = this.leadProbabilities;
+          this.lineChartLabels = Array.from({ length: data.length }, (_, i) => `Lead ${i + 1}`);
+        });
+      });
 
 
-public barChartOptions: ChartOptions = {
-  responsive: true,
-};
+    this.dashboardService.getLeadCountsByStatus().subscribe(data => {
+      this.pieChartLabels = Object.keys(data);
+      this.pieChartData = [
+        { data: Object.values(data), backgroundColor: ['#FF5733', '#33FF57', '#3366FF', '#FFC300', '#8E44AD'], label: 'Status Counts' }
+      ];
+    });
 
-public barChartLabels: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-public barChartType: ChartType = 'bar';
-public barChartLegend = true;
+    this.dashboardService.getLeadCountsByProducts().subscribe(data => {
+      this.barChartLabels = Object.keys(data);
+      this.barChartData[0].data = Object.values(data);
+    });
 
-public barChartData: ChartDataset[] = [
-  { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-];
+    this.dashboardService.getLeadCountsByRegion().subscribe(data => {
+      this.doughnutChartLabels = Object.keys(data);
+      this.doughnutChartData = [
+        { data: Object.values(data), backgroundColor: ['#FF5733', '#33FF57', '#3366FF', '#FFC300'], label: 'Region Counts' }
+      ];
+    });
+  }
 }

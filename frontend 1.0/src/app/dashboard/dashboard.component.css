@@ -1,27 +1,43 @@
+.chart-container {
+  display: flex; /* Use flexbox to display items in a row */
+  justify-content: space-between; /* Add space between the charts */
+  max-width: 1200px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container on the page */
+  padding-top: 50px;
+}
+
+/* Adjust the width and height of the charts */
+canvas {
+  max-width: 600px; /* Set a maximum width */
+  max-height: 400px; /* Set a maximum height */
+  width: 100%; /* Take up 100% of the available width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
 
 
 /* Add any additional global styles here */
-
+/*
 .chart-container {
   position: relative;
-  width: 500px; /* Set the desired width */
-  height: 400px; /* Set the desired height */
+  width: 500px;
+  height: 400px;
   margin: auto;
 }
 
-/* Optional: Add some padding or margins if needed */
+
 .chart-container canvas {
   margin: auto;
   display: block;
 }
 
-/* Optional: Style the legend */
+
 .chart-legend {
   list-style: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  /* Allow legend items to wrap */
+
 }
 
 .chart-legend-item {
@@ -37,7 +53,7 @@
   margin-right: 5px;
 }
 
-/* Optional: Add hover effect to legend items */
+
 .chart-legend-item:hover {
   cursor: pointer;
   font-weight: bold;
@@ -52,4 +68,4 @@
 .chart-container canvas {
   margin: auto;
   display: block
-}
+} */
