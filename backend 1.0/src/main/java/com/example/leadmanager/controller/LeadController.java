@@ -35,6 +35,7 @@ public class LeadController {
 
     @GetMapping("/all")
     public List<Lead> getAllLeads() {
+       // System.out.println(leadService.getAllLeads());
         return leadService.getAllLeads();
     }
 

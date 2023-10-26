@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.leadmanager.entity.QualifiedLead;
+import com.example.leadmanager.entity.UnqualifiedLead;
 import com.example.leadmanager.service.DashboardService;
 
 @RestController
@@ -45,5 +47,40 @@ public class DashboardController {
     @GetMapping("/products")
     public Map<String, Integer> getLeadCountsByProducts() {
         return dashboardService.countLeadsByProducts();
+    }
+
+    @GetMapping("/won-leads")
+    public List<QualifiedLead> getAllWonLeads() {
+        return dashboardService.findAllWonLeads();
+    }
+
+    @GetMapping("/lost-leads")
+    public List<UnqualifiedLead> getAllLostLeads() {
+        return dashboardService.findAllLostLeads();
+    }
+
+    @GetMapping("/totalExpectedRevenue")
+    public double getTotalExpectedRevenue() {
+        return dashboardService.calculateTotalExpectedRevenue();
+    }
+
+    @GetMapping("/totalLeadCount")
+    public int getTotalLeadCount() {
+        return dashboardService.calculateTotalLeadCount();
+    }
+
+    @GetMapping("/totalWonLeadsCount")
+    public int getTotalWonLeads() {
+        return dashboardService.calculateTotalWonLeadCount();
+    }
+
+    @GetMapping("/totalLostLeadsCount")
+    public int getTotalLostLeads() {
+        return dashboardService.calculateTotalLostLeadCount();
+    }
+
+    @GetMapping("/convertionRate")
+    public double getConversionRate() {
+        return dashboardService.calculateConversionRate();
     }
 }

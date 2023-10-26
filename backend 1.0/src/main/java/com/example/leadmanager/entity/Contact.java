@@ -29,7 +29,5 @@ public class Contact {
     @JsonBackReference
     @JoinColumn(name = "account_id")
     private Account account;
-
-   
 }
 

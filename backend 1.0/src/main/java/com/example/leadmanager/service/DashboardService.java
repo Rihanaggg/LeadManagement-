@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.leadmanager.entity.Lead;
+import com.example.leadmanager.entity.QualifiedLead;
+import com.example.leadmanager.entity.UnqualifiedLead;
 import com.example.leadmanager.repository.LeadRepository;
+import com.example.leadmanager.repository.QualifiedLeadRepository;
+import com.example.leadmanager.repository.UnqualifiedLeadRepository;
 
 
 @Service
@@ -19,6 +23,12 @@ public class DashboardService {
 
     @Autowired
     private LeadRepository leadRepository;
+
+    @Autowired
+    private QualifiedLeadRepository qualifiedLeadRepository;
+
+    @Autowired
+    private UnqualifiedLeadRepository unqualifiedLeadRepository;
 
     public List<Double> getAllLeadProbabilities() {
         List<Lead> allLeads = leadService.getAllLeads();
@@ -40,6 +50,21 @@ public class DashboardService {
         return leads.stream()
                 .map(lead -> lead.getNewLead().getExpectedRevenue())
                 .toList();
+    }
+
+    public int calculateTotalLeadCount() {
+        List<Lead> allLeads = leadService.getAllLeads();
+        return extractLeadCount(allLeads);
+    }
+    
+    private int extractLeadCount(List<Lead> leads) {
+        return leads.size();
+    }
+    
+    public double calculateTotalExpectedRevenue() {
+        List<Lead> allLeads = leadService.getAllLeads();
+        List<Double> expectedRevenues = extractExpectedRevenues(allLeads);
+        return expectedRevenues.stream().mapToDouble(Double::doubleValue).sum();
     }
     
 
@@ -98,5 +123,32 @@ public Map<String, Integer> countLeadsByProducts() {
     return productCounts;
 }
 
+
+    public List<QualifiedLead> findAllWonLeads() {
+        return qualifiedLeadRepository.findAll();
+    }
+
+    public int calculateTotalWonLeadCount() {
+        return findAllWonLeads().size();
+    }
     
+     
+    public List<UnqualifiedLead> findAllLostLeads() {
+        return unqualifiedLeadRepository.findAll();
+    }
+
+     public int calculateTotalLostLeadCount() {       
+        return findAllLostLeads().size();
+    }
+
+    public double calculateConversionRate() {
+        int totalWonLeads = calculateTotalWonLeadCount();
+        int totalLeads = calculateTotalLeadCount();
+
+        if (totalLeads != 0) {
+            return ((double) totalWonLeads / totalLeads) * 100;
+        } else {
+            return 0.0; // Handle the case where totalLeads is zero to avoid division by zero
+        }
+    }
 }

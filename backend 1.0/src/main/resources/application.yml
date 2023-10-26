@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/NewLeadManage
+    url: jdbc:mysql://localhost:3306/LeadManagement
     username: ru1910
     password: ruch@123
   jpa:

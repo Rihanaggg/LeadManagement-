@@ -29,11 +29,41 @@ export class DashboardService {
 
   getLeadCountsByRegion(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/region`);
-
   }
 
   getLeadCountsByProducts(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/products`);
 
+  }
+
+
+  //Report Services
+
+  getAllWonLeads(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/won-leads`);
+  }
+
+  getAllLostLeads(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/lost-leads`);
+  }
+
+  getTotalExpectedRevenue(): Observable<any> {
+    return this.http.get<number>(`${this.apiUrl}/totalExpectedRevenue`);
+  }
+
+  getTotalLeadCount(): Observable<any> {
+    return this.http.get<number>(`${this.apiUrl}/totalLeadCount`);
+  }
+
+  getTotalWonLeadCount(): Observable<any> {
+    return this.http.get<number>(`${this.apiUrl}/totalWonLeadsCount`);
+  }
+
+  getTotalLostLeadCount(): Observable<any> {
+    return this.http.get<number>(`${this.apiUrl}/totalLostLeadsCount`);
+  }
+
+  getConvertionRateValue(): Observable<any> {
+    return this.http.get<number>(`${this.apiUrl}/convertionRate`);
   }
 }

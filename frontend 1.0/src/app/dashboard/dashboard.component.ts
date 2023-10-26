@@ -71,6 +71,8 @@ export class DashboardComponent implements OnInit {
           this.lineChartData[0].data = this.leadProbabilities;
           this.lineChartLabels = Array.from({ length: data.length }, (_, i) => `Lead ${i + 1}`);
         });
+
+
       });
 
 
