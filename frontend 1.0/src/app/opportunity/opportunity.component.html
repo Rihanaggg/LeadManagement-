@@ -66,7 +66,7 @@
         <td>{{ opportunity.status }}</td>
         <td>{{ opportunity.expectedClosingDate | date: 'dd-MM-yyyy' }}</td>
         <td>{{ opportunity.expectedRevenue }}</td>
-        <td>{{ opportunity.newLead?.owner }}</td> <!-- Use the safe navigation operator (?) for optional properties -->
+        <td>{{ opportunity.owner.name }}</td> <!-- Use the safe navigation operator (?) for optional properties -->
         <td>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -74,8 +74,7 @@
 
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" (click)="openOpportunity(opportunity.id)">Open</a></li>
-              <li><a class="dropdown-item">Edit</a></li>
+              <li><a class="dropdown-item" (click)="openOpportunity(opportunity.id)">Edit</a></li>
               <li><a class="dropdown-item" (click)="deleteOpportunity(opportunity.id)">Delete</a></li>
             </ul>
           </div>

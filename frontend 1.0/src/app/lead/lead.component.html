@@ -68,7 +68,7 @@
         <td>{{ lead.newLead.email }}</td>
         <td>{{ lead.newLead.status }}</td>
         <td>{{ lead.newLead.createdDate | date: 'dd-MM-yyyy' }}</td>
-        <td>{{ lead.newLead.owner }}</td>
+        <td>{{ lead.newLead.owner.name }}</td>
         <td>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -76,8 +76,7 @@
 
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" (click)="openLead(lead.leadId)">Open</a></li>
-              <li><a class="dropdown-item">Edit</a></li>
+              <li><a class="dropdown-item" (click)="openLead(lead.leadId)">Edit</a></li>
               <li><a class="dropdown-item" (click)="deleteLead(lead.leadId)">Delete</a></li>
             </ul>
           </div>

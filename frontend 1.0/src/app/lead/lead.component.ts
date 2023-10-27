@@ -26,6 +26,9 @@ export class LeadComponent implements OnInit {
     this.leadService.getAllLeads().subscribe(
       (data) => {
         this.leads = data;
+        console.log(this.leads);
+
+
       },
       (error) => {
         console.error(error);
@@ -38,6 +41,8 @@ export class LeadComponent implements OnInit {
       this.leadService.searchLeads(this.searchType, this.searchQuery).subscribe(
         (data) => {
           this.leads = data;
+
+
         },
         (error) => {
           console.error(error);

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.example.leadmanager.dto.FirstFormDTO;
@@ -14,6 +16,7 @@ import com.example.leadmanager.entity.NewLead;
 import com.example.leadmanager.entity.Opportunity;
 import com.example.leadmanager.entity.QualifiedLead;
 import com.example.leadmanager.entity.UnqualifiedLead;
+import com.example.leadmanager.entity.User;
 import com.example.leadmanager.exception.LeadNotFoundException;
 import com.example.leadmanager.repository.AccountRepository;
 import com.example.leadmanager.repository.ContactRepository;
@@ -22,6 +25,7 @@ import com.example.leadmanager.repository.NewLeadRepository;
 import com.example.leadmanager.repository.OpportunityRepository;
 import com.example.leadmanager.repository.QualifiedLeadRepository;
 import com.example.leadmanager.repository.UnqualifiedLeadRepository;
+import com.example.leadmanager.security.UserService;
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -51,6 +55,9 @@ public class LeadService {
     @Autowired
     private UnqualifiedLeadRepository unqualifiedLeadRepository;
 
+    @Autowired
+    private UserService userService;
+
     //get all leads
     public List<Lead> getAllLeads() {
         return leadRepository.findAll();
@@ -62,6 +69,10 @@ public class LeadService {
     }
 
      public Lead createLead(FirstFormDTO firstFormDTO) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        Optional<User> loggedInUser = userService.getByName(username);
         
         NewLead newLead = new NewLead();
 
@@ -82,7 +93,9 @@ public class LeadService {
         newLead.setStatus(firstFormDTO.getStatus());
         newLead.setSource(firstFormDTO.getSource());
         newLead.setCreatedDate(firstFormDTO.getCreatedDate());
-
+if(loggedInUser.isPresent()){
+    newLead.setOwner(loggedInUser.get());
+}
         newLeadRepository.save(newLead);
 
          // Create a new Lead and associate it with the saved Account

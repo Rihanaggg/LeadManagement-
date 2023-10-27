@@ -4,19 +4,26 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.example.leadmanager.dto.OpportunityFormDTO;
 import com.example.leadmanager.entity.Account;
 import com.example.leadmanager.entity.Opportunity;
+import com.example.leadmanager.entity.User;
 import com.example.leadmanager.exception.OpportunityNotFoundException;
 import com.example.leadmanager.repository.OpportunityRepository;
+import com.example.leadmanager.security.UserService;
 
 @Service
 public class OpportunityService {
 
     @Autowired
     private OpportunityRepository opportunityRepository;
+
+    @Autowired
+    private UserService userService;
 
     // Get all opportunities
     public List<Opportunity> getAllOpportunities() {
@@ -30,6 +37,11 @@ public class OpportunityService {
 
     // Create a new opportunity
     public Opportunity createOpportunity(OpportunityFormDTO opportunityFormDTO, Account account) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        Optional<User> loggedInUser = userService.getByName(username);
+
         Opportunity opportunity = new Opportunity();
 
         // Set properties from opportunityFormDTO
@@ -42,7 +54,9 @@ public class OpportunityService {
         opportunity.setStatus(opportunityFormDTO.getStatus());
         opportunity.setSource(opportunityFormDTO.getSource());
         opportunity.setAccountName(opportunityFormDTO.getAccountName());
-        
+        if(loggedInUser.isPresent()){
+            opportunity.setOwner(loggedInUser.get());
+        }
 
         return opportunityRepository.save(opportunity);
     }

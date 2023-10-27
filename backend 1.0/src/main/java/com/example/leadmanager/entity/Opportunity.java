@@ -29,6 +29,9 @@ public class Opportunity {
     private String accountName;
 
     @ManyToOne
+    private User owner;
+    
+    @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "account_id")
     private Account account;
