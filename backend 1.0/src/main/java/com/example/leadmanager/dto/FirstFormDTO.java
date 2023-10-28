@@ -2,9 +2,12 @@ package com.example.leadmanager.dto;
 
 import java.util.Date;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+
+@Getter
+@Setter
 public class FirstFormDTO {
     
     private String name;

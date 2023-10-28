@@ -49,7 +49,7 @@ export class OpportunityComponent implements OnInit {
   // }
 
   searchOpportunities() {
-    const status = 'qualified'; // Replace with the status you want to search
+    const status = 'closed Won'; // Replace with the status you want to search
     this.opportunityService.searchOpportunitiesByStatus(status)
       .subscribe(data => {
         // Handle the returned data here

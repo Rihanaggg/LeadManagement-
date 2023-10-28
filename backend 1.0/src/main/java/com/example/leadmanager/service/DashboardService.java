@@ -30,6 +30,8 @@ public class DashboardService {
     @Autowired
     private UnqualifiedLeadRepository unqualifiedLeadRepository;
 
+   
+
     public List<Double> getAllLeadProbabilities() {
         List<Lead> allLeads = leadService.getAllLeads();
         return extractProbabilities(allLeads);
@@ -65,6 +67,22 @@ public class DashboardService {
         List<Lead> allLeads = leadService.getAllLeads();
         List<Double> expectedRevenues = extractExpectedRevenues(allLeads);
         return expectedRevenues.stream().mapToDouble(Double::doubleValue).sum();
+    }
+    
+    public double calculateTotalWeightedRevenue() {
+        List<Lead> allLeads = leadService.getAllLeads();
+    
+        double totalWeightedRevenue = 0.0;
+    
+        for (Lead lead : allLeads) {
+            double probability = lead.getNewLead().getProbability();
+            double expectedRevenue = lead.getNewLead().getExpectedRevenue();
+    
+            double weightedRevenue = probability * expectedRevenue;
+            totalWeightedRevenue += weightedRevenue;
+        }
+    
+        return totalWeightedRevenue;
     }
     
 

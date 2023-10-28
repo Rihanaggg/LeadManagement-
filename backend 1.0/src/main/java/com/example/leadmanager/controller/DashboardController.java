@@ -64,6 +64,11 @@ public class DashboardController {
         return dashboardService.calculateTotalExpectedRevenue();
     }
 
+    @GetMapping("/totalWeightedRevenue")
+    public double getTotalWeightedRevenue() {
+        return dashboardService.calculateTotalWeightedRevenue();
+    }
+
     @GetMapping("/totalLeadCount")
     public int getTotalLeadCount() {
         return dashboardService.calculateTotalLeadCount();

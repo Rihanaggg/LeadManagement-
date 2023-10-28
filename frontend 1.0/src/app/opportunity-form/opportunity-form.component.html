@@ -5,7 +5,7 @@
       <div class="col-md-6">
 
         <div class="mb-3">
-          <label for="required_quantity" class="form-label">Required Quantity</label>
+          <label for="requiredQuantity" class="form-label">Required Quantity</label>
           <input type="number" class="form-control" id="requiredQuantity" formControlName="requiredQuantity" min="1">
         </div>
 
@@ -75,6 +75,19 @@
 
     <!-- Repeat the row and column structure for other sections of the form -->
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit</button>
   </form>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          Opportunity Created successfully
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/account">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

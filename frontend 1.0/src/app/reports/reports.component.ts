@@ -10,10 +10,12 @@ import { DashboardService } from '../service/DashboardService';
 export class ReportsComponent implements OnInit {
   leads: any[] = [];
   totalExpectedRevenue: number=0.0;
+  totalWeightedRevenue:number=0;
   totalLeadCount: number=0;
   totalWonLeadCount :number=0;
   totalLostLostCount : number=0;
   convertionRate: number=0;
+
 
   constructor(private dashboardService: DashboardService) {}
 
@@ -23,6 +25,15 @@ export class ReportsComponent implements OnInit {
     this.dashboardService.getTotalExpectedRevenue().subscribe(
       (data) => {
         this.totalExpectedRevenue = data;
+      },
+      (error) => {
+        console.error('Error fetching total expected revenue: ', error);
+      }
+    );
+
+    this.dashboardService.getTotalWeightedRevenue().subscribe(
+      (data) => {
+        this.totalWeightedRevenue = data;
       },
       (error) => {
         console.error('Error fetching total expected revenue: ', error);
@@ -76,4 +87,8 @@ export class ReportsComponent implements OnInit {
       }
     );
   }
+
+
+
+
 }

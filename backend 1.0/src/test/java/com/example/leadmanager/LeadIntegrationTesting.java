@@ -167,7 +167,7 @@ void testCreateLeadpoint() throws Exception {
         firstFormDTO.setSource("refferal");
 
     HttpHeaders headers = new HttpHeaders();
-    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4MTI5NTA2LCJpYXQiOjE2OTgwNDMxMDYsInNjb3BlIjoiUk9MRV91c2VyIn0.Kcl73jF9w1Es4jQlLI9JzNXjWvXLEl2vlp1fhzqnwpt45n1Vk4vi6slGk6nhpSTfedTs0b27dPU5hEvTADa8SNZVXZOPlyP-MnmhSsAtpC25WZoIUwYe54CtXB9KMfvVjs4VrBVN2NONfzeOTdqzYZO48AH0yMY3165kCihIshTdWPx9oPgkgwYoqqhGI-9UMEw39WbXIEntywXi2TXL4jaFG0RY_ayqDx6q8kLZ4dPW-pn9EWXdQzbB7z-Sn-Vtg67PAeg1h-NhCufRIXOAfdh4e5vahjYG7js9VYZ7D7MeV0pyOXXWyXsyVSRSCvpwf_BmNX7JdU30qTDNJi3SxQ");
+    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4NDc2OTMwLCJpYXQiOjE2OTgzOTA1MzAsInNjb3BlIjoiUk9MRV9VU0VSIn0.OHJ0kl4Cs1knYwvblQ4ay-5KBQqLnxFrPuO9NHc9UK30hd9YBdnLKTTghjHAXwwTSiuFY_u83VKPbJx10MCzLbeC2xbGepZaMVj41LCR4oBKZ3_lwBYGHUbWgF7AIOXcUNq22kl8SUO0fVLmHVpN-HLGwpuB_Y9y2LAo58ZmRKXcv2y9HXf41YnFDD91RlZurX7c0I4xjA1gDiZGHEY8DRAi0tJ-FsjL6ONGftDvH_FwpnoWtOp3ebxIH3sUlPQ2APvuKj2C-BnTmOb-lCvO185b_AlSP7kmDz5Ecr6KcWtjJfR1HZDbMFD098gj4eqG-HDRF2rp2mjuXx_ggpizUQ");
     headers.setContentType(MediaType.APPLICATION_JSON);
 try {
     ResponseEntity<NewLead> response = restTemplate.exchange(
@@ -208,11 +208,11 @@ void testUpdateLeadpoint() throws Exception {
         firstFormDTO.setSource("web inquiry");
 
     HttpHeaders headers = new HttpHeaders();
-    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4MTI5NTA2LCJpYXQiOjE2OTgwNDMxMDYsInNjb3BlIjoiUk9MRV91c2VyIn0.Kcl73jF9w1Es4jQlLI9JzNXjWvXLEl2vlp1fhzqnwpt45n1Vk4vi6slGk6nhpSTfedTs0b27dPU5hEvTADa8SNZVXZOPlyP-MnmhSsAtpC25WZoIUwYe54CtXB9KMfvVjs4VrBVN2NONfzeOTdqzYZO48AH0yMY3165kCihIshTdWPx9oPgkgwYoqqhGI-9UMEw39WbXIEntywXi2TXL4jaFG0RY_ayqDx6q8kLZ4dPW-pn9EWXdQzbB7z-Sn-Vtg67PAeg1h-NhCufRIXOAfdh4e5vahjYG7js9VYZ7D7MeV0pyOXXWyXsyVSRSCvpwf_BmNX7JdU30qTDNJi3SxQ");
+    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4NDc2OTMwLCJpYXQiOjE2OTgzOTA1MzAsInNjb3BlIjoiUk9MRV9VU0VSIn0.OHJ0kl4Cs1knYwvblQ4ay-5KBQqLnxFrPuO9NHc9UK30hd9YBdnLKTTghjHAXwwTSiuFY_u83VKPbJx10MCzLbeC2xbGepZaMVj41LCR4oBKZ3_lwBYGHUbWgF7AIOXcUNq22kl8SUO0fVLmHVpN-HLGwpuB_Y9y2LAo58ZmRKXcv2y9HXf41YnFDD91RlZurX7c0I4xjA1gDiZGHEY8DRAi0tJ-FsjL6ONGftDvH_FwpnoWtOp3ebxIH3sUlPQ2APvuKj2C-BnTmOb-lCvO185b_AlSP7kmDz5Ecr6KcWtjJfR1HZDbMFD098gj4eqG-HDRF2rp2mjuXx_ggpizUQ");
     headers.setContentType(MediaType.APPLICATION_JSON);
 try {
     ResponseEntity<NewLead> response = restTemplate.exchange(
-            "http://localhost:" + port + "/api/leads/allupdate/22",
+            "http://localhost:" + port + "/api/leads/allupdate/3",
             HttpMethod.PUT,
             new HttpEntity<>(firstFormDTO, headers),
             NewLead.class);
@@ -232,7 +232,7 @@ try {
 void testAllLeads() throws Exception {
 
     HttpHeaders headers = new HttpHeaders();
-    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4MTI5NTA2LCJpYXQiOjE2OTgwNDMxMDYsInNjb3BlIjoiUk9MRV91c2VyIn0.Kcl73jF9w1Es4jQlLI9JzNXjWvXLEl2vlp1fhzqnwpt45n1Vk4vi6slGk6nhpSTfedTs0b27dPU5hEvTADa8SNZVXZOPlyP-MnmhSsAtpC25WZoIUwYe54CtXB9KMfvVjs4VrBVN2NONfzeOTdqzYZO48AH0yMY3165kCihIshTdWPx9oPgkgwYoqqhGI-9UMEw39WbXIEntywXi2TXL4jaFG0RY_ayqDx6q8kLZ4dPW-pn9EWXdQzbB7z-Sn-Vtg67PAeg1h-NhCufRIXOAfdh4e5vahjYG7js9VYZ7D7MeV0pyOXXWyXsyVSRSCvpwf_BmNX7JdU30qTDNJi3SxQ");
+    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4NDc2OTMwLCJpYXQiOjE2OTgzOTA1MzAsInNjb3BlIjoiUk9MRV9VU0VSIn0.OHJ0kl4Cs1knYwvblQ4ay-5KBQqLnxFrPuO9NHc9UK30hd9YBdnLKTTghjHAXwwTSiuFY_u83VKPbJx10MCzLbeC2xbGepZaMVj41LCR4oBKZ3_lwBYGHUbWgF7AIOXcUNq22kl8SUO0fVLmHVpN-HLGwpuB_Y9y2LAo58ZmRKXcv2y9HXf41YnFDD91RlZurX7c0I4xjA1gDiZGHEY8DRAi0tJ-FsjL6ONGftDvH_FwpnoWtOp3ebxIH3sUlPQ2APvuKj2C-BnTmOb-lCvO185b_AlSP7kmDz5Ecr6KcWtjJfR1HZDbMFD098gj4eqG-HDRF2rp2mjuXx_ggpizUQ");
     headers.setContentType(MediaType.APPLICATION_JSON);
 try {
     ResponseEntity<Lead[]> response = restTemplate.exchange(
@@ -260,7 +260,7 @@ try {
 void testLeadsById() throws Exception {
 
     HttpHeaders headers = new HttpHeaders();
-    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4MTI5NTA2LCJpYXQiOjE2OTgwNDMxMDYsInNjb3BlIjoiUk9MRV91c2VyIn0.Kcl73jF9w1Es4jQlLI9JzNXjWvXLEl2vlp1fhzqnwpt45n1Vk4vi6slGk6nhpSTfedTs0b27dPU5hEvTADa8SNZVXZOPlyP-MnmhSsAtpC25WZoIUwYe54CtXB9KMfvVjs4VrBVN2NONfzeOTdqzYZO48AH0yMY3165kCihIshTdWPx9oPgkgwYoqqhGI-9UMEw39WbXIEntywXi2TXL4jaFG0RY_ayqDx6q8kLZ4dPW-pn9EWXdQzbB7z-Sn-Vtg67PAeg1h-NhCufRIXOAfdh4e5vahjYG7js9VYZ7D7MeV0pyOXXWyXsyVSRSCvpwf_BmNX7JdU30qTDNJi3SxQ");
+    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4NDc2OTMwLCJpYXQiOjE2OTgzOTA1MzAsInNjb3BlIjoiUk9MRV9VU0VSIn0.OHJ0kl4Cs1knYwvblQ4ay-5KBQqLnxFrPuO9NHc9UK30hd9YBdnLKTTghjHAXwwTSiuFY_u83VKPbJx10MCzLbeC2xbGepZaMVj41LCR4oBKZ3_lwBYGHUbWgF7AIOXcUNq22kl8SUO0fVLmHVpN-HLGwpuB_Y9y2LAo58ZmRKXcv2y9HXf41YnFDD91RlZurX7c0I4xjA1gDiZGHEY8DRAi0tJ-FsjL6ONGftDvH_FwpnoWtOp3ebxIH3sUlPQ2APvuKj2C-BnTmOb-lCvO185b_AlSP7kmDz5Ecr6KcWtjJfR1HZDbMFD098gj4eqG-HDRF2rp2mjuXx_ggpizUQ");
     headers.setContentType(MediaType.APPLICATION_JSON);
 try {
     ResponseEntity<Lead> response = restTemplate.exchange(
@@ -284,7 +284,60 @@ try {
 
 }
 
+@Test
+void testUpdateByAttributeLeadpoint() throws Exception {
 
+    FirstFormDTO firstFormDTO = new FirstFormDTO();
+       
+        firstFormDTO.setWebsite("www.tteloco.com");
+       
+
+    HttpHeaders headers = new HttpHeaders();
+    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4NDc2OTMwLCJpYXQiOjE2OTgzOTA1MzAsInNjb3BlIjoiUk9MRV9VU0VSIn0.OHJ0kl4Cs1knYwvblQ4ay-5KBQqLnxFrPuO9NHc9UK30hd9YBdnLKTTghjHAXwwTSiuFY_u83VKPbJx10MCzLbeC2xbGepZaMVj41LCR4oBKZ3_lwBYGHUbWgF7AIOXcUNq22kl8SUO0fVLmHVpN-HLGwpuB_Y9y2LAo58ZmRKXcv2y9HXf41YnFDD91RlZurX7c0I4xjA1gDiZGHEY8DRAi0tJ-FsjL6ONGftDvH_FwpnoWtOp3ebxIH3sUlPQ2APvuKj2C-BnTmOb-lCvO185b_AlSP7kmDz5Ecr6KcWtjJfR1HZDbMFD098gj4eqG-HDRF2rp2mjuXx_ggpizUQ");
+    headers.setContentType(MediaType.APPLICATION_JSON);
+try {
+    ResponseEntity<NewLead> response = restTemplate.exchange(
+            "http://localhost:" + port + "/api/leads/update/3",
+            HttpMethod.PATCH,
+            new HttpEntity<>(firstFormDTO, headers),
+            NewLead.class);
+
+    NewLead updatedLeadEntity = response.getBody();
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+
+    // Add additional assertions as needed
+} catch (Exception e) {
+    e.printStackTrace();
+}
 
 }
 
+
+@Test
+void testDeleteLeadsById() throws Exception {
+
+    HttpHeaders headers = new HttpHeaders();
+    headers.set("Authorization", "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiUmloYW5hIiwiZXhwIjoxNjk4NDc2OTMwLCJpYXQiOjE2OTgzOTA1MzAsInNjb3BlIjoiUk9MRV9VU0VSIn0.OHJ0kl4Cs1knYwvblQ4ay-5KBQqLnxFrPuO9NHc9UK30hd9YBdnLKTTghjHAXwwTSiuFY_u83VKPbJx10MCzLbeC2xbGepZaMVj41LCR4oBKZ3_lwBYGHUbWgF7AIOXcUNq22kl8SUO0fVLmHVpN-HLGwpuB_Y9y2LAo58ZmRKXcv2y9HXf41YnFDD91RlZurX7c0I4xjA1gDiZGHEY8DRAi0tJ-FsjL6ONGftDvH_FwpnoWtOp3ebxIH3sUlPQ2APvuKj2C-BnTmOb-lCvO185b_AlSP7kmDz5Ecr6KcWtjJfR1HZDbMFD098gj4eqG-HDRF2rp2mjuXx_ggpizUQ");
+    headers.setContentType(MediaType.APPLICATION_JSON);
+try {
+    ResponseEntity<Lead> response = restTemplate.exchange(
+
+                "http://localhost:" + port + "/api/leads/delete/1",
+
+                HttpMethod.GET,
+
+                new HttpEntity<>(headers),
+
+                Lead.class);
+    
+
+    Lead lead = response.getBody();
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    //assertEquals(2, lead.length);
+    // Add additional assertions as needed
+} catch (Exception e) {
+    e.printStackTrace();
+}
+
+}
+}

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { OpportunityService } from '../service/OpportunityService';
 import { Router } from '@angular/router';
 import { OpportunityFormDTO } from '../model/OpportunityFormDTO';
+import { OpportunityService } from '../service/OpportunityService';
 
 @Component({
   selector: 'app-opportunity-form',
@@ -15,7 +15,7 @@ export class OpportunityFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private opportunityService: OpportunityService,private router: Router) {
     this.opportunityForm = this.fb.group({
-      required_quantity: [1, [Validators.min(1)]],
+      requiredQuantity: [1, [Validators.min(1)]],
       expectedRevenue: [0, [Validators.min(0)]],
       probability: [0, [Validators.min(0), Validators.max(1)]],
       priority: [''],

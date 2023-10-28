@@ -1,9 +1,13 @@
 package com.example.leadmanager.dto;
 
 import java.util.Date;
-import lombok.Data;
 
-@Data
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
 public class OpportunityFormDTO {
 
     private int requiredQuantity;

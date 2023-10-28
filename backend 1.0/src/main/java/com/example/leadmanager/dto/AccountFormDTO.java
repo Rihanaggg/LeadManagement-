@@ -1,8 +1,10 @@
 package com.example.leadmanager.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class AccountFormDTO {
     private String companyName;
     private String address;

@@ -51,6 +51,10 @@ export class DashboardService {
     return this.http.get<number>(`${this.apiUrl}/totalExpectedRevenue`);
   }
 
+  getTotalWeightedRevenue(): Observable<any> {
+    return this.http.get<number>(`${this.apiUrl}/totalWeightedRevenue`);
+  }
+
   getTotalLeadCount(): Observable<any> {
     return this.http.get<number>(`${this.apiUrl}/totalLeadCount`);
   }

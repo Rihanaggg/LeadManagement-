@@ -362,18 +362,18 @@ if(loggedInUser.isPresent()){
 
                 qualifiedLeadRepository.save(qualifiedLead);
                  // Remove the lead data
-            // leadRepository.delete(lead);
+                leadRepository.delete(lead);
             } else if (newStatus.equals("Lost")) {
                 // Move to UnqualifiedLead table
                 newLead.setStatus(newStatus);
-           //leadRepository.save(lead);
+                leadRepository.save(lead);
 
                 UnqualifiedLead unqualifiedLead = new UnqualifiedLead();
                 unqualifiedLead.setNewLead(newLead);
 
                 unqualifiedLeadRepository.save(unqualifiedLead);
                  // Remove the lead data
-           // leadRepository.delete(lead);
+                leadRepository.delete(lead);
             }
         } else {
             // Handle case where lead with leadId is not found
