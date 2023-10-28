@@ -1,7 +1,15 @@
-# Sugar CRM - Lead Management System
+# CRM - Lead Management System
 
-**Author/Owner:** Prashant  
+**Author of Problem Statement:** Prashant  
 **Date:** 10/10/2023
+
+- [ ] [Backend Code](url_to_backend_code)
+- [ ] [API Documentation](url_to_api_docs)
+- [ ] [Frontend Code](url_to_frontend_code)
+- [ ] [Frontend Documentation](url_to_frontend_docs)
+- [ ] [ER Diagram](url_to_er_diagram)
+- [ ] [Test Coverage](url_to_test_coverage)
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
