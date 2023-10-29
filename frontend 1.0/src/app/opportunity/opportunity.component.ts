@@ -62,12 +62,12 @@ export class OpportunityComponent implements OnInit {
     }
 
     openOpportunity(id: number) {
-      console.log(id);
+
       this.router.navigate(['/opportunity-detail', id]);
     }
 
     deleteOpportunity(id: number) {
-      console.log(id);
+
       this.opportunityService.deleteOpportunityById(id).subscribe(
         () => {
         }

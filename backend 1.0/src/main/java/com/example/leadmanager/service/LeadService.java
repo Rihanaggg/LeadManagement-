@@ -1,5 +1,6 @@
 package com.example.leadmanager.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -346,6 +347,8 @@ if(loggedInUser.isPresent()){
                 opportunity.setSource(newLead.getSource());
                 opportunity.setStatus(newLead.getStatus());
                 opportunity.setAccountName(newLead.getCompanyName());
+                opportunity.setOwner(newLead.getOwner());
+                opportunity.setExpectedClosingDate(new Date());
                 opportunity.setAccount(account);
                 opportunityRepository.save(opportunity);
 
