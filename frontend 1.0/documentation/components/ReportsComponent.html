@@ -1,0 +1,863 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>leadfrontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">leadfrontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ReportsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/reports/reports.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-reports</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./reports.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./reports.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#convertionRate" >convertionRate</a>
+                            </li>
+                            <li>
+                                <a href="#leads" >leads</a>
+                            </li>
+                            <li>
+                                <a href="#totalExpectedRevenue" >totalExpectedRevenue</a>
+                            </li>
+                            <li>
+                                <a href="#totalLeadCount" >totalLeadCount</a>
+                            </li>
+                            <li>
+                                <a href="#totalLostLostCount" >totalLostLostCount</a>
+                            </li>
+                            <li>
+                                <a href="#totalWeightedRevenue" >totalWeightedRevenue</a>
+                            </li>
+                            <li>
+                                <a href="#totalWonLeadCount" >totalWonLeadCount</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#loadAllLeads" >loadAllLeads</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dashboardService: <a href="../injectables/DashboardService.html" target="_self">DashboardService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/reports/reports.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dashboardService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DashboardService.html" target="_self" >DashboardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAllLeads"></a>
+                    <span class="name">
+                        <span ><b>loadAllLeads</b></span>
+                        <a href="#loadAllLeads"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadAllLeads()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/reports/reports.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/reports/reports.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertionRate"></a>
+                    <span class="name">
+                        <span ><b>convertionRate</b></span>
+                        <a href="#convertionRate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/reports/reports.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="leads"></a>
+                    <span class="name">
+                        <span ><b>leads</b></span>
+                        <a href="#leads"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/reports/reports.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalExpectedRevenue"></a>
+                    <span class="name">
+                        <span ><b>totalExpectedRevenue</b></span>
+                        <a href="#totalExpectedRevenue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0.0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/reports/reports.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalLeadCount"></a>
+                    <span class="name">
+                        <span ><b>totalLeadCount</b></span>
+                        <a href="#totalLeadCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/reports/reports.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalLostLostCount"></a>
+                    <span class="name">
+                        <span ><b>totalLostLostCount</b></span>
+                        <a href="#totalLostLostCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/reports/reports.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalWeightedRevenue"></a>
+                    <span class="name">
+                        <span ><b>totalWeightedRevenue</b></span>
+                        <a href="#totalWeightedRevenue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/reports/reports.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalWonLeadCount"></a>
+                    <span class="name">
+                        <span ><b>totalWonLeadCount</b></span>
+                        <a href="#totalWonLeadCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/reports/reports.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { DashboardService } from &#x27;../service/DashboardService&#x27;;
+
+
+@Component({
+  selector: &#x27;app-reports&#x27;,
+  templateUrl: &#x27;./reports.component.html&#x27;,
+  styleUrls: [&#x27;./reports.component.css&#x27;]
+})
+export class ReportsComponent implements OnInit {
+  leads: any[] &#x3D; [];
+  totalExpectedRevenue: number&#x3D;0.0;
+  totalWeightedRevenue:number&#x3D;0;
+  totalLeadCount: number&#x3D;0;
+  totalWonLeadCount :number&#x3D;0;
+  totalLostLostCount : number&#x3D;0;
+  convertionRate: number&#x3D;0;
+
+
+  constructor(private dashboardService: DashboardService) {}
+
+  ngOnInit() {
+    this.loadAllLeads();
+
+    this.dashboardService.getTotalExpectedRevenue().subscribe(
+      (data) &#x3D;&gt; {
+        this.totalExpectedRevenue &#x3D; data;
+      },
+      (error) &#x3D;&gt; {
+        console.error(&#x27;Error fetching total expected revenue: &#x27;, error);
+      }
+    );
+
+    this.dashboardService.getTotalWeightedRevenue().subscribe(
+      (data) &#x3D;&gt; {
+        this.totalWeightedRevenue &#x3D; data;
+      },
+      (error) &#x3D;&gt; {
+        console.error(&#x27;Error fetching total expected revenue: &#x27;, error);
+      }
+    );
+
+    this.dashboardService.getTotalLeadCount().subscribe(
+      (data) &#x3D;&gt; {
+        this.totalLeadCount &#x3D; data;
+      },
+      (error) &#x3D;&gt; {
+        console.error(&#x27;Error fetching total lead count: &#x27;, error);
+      }
+    );
+
+    this.dashboardService.getTotalWonLeadCount().subscribe(
+      (data) &#x3D;&gt; {
+        this.totalWonLeadCount &#x3D; data;
+      },
+      (error) &#x3D;&gt; {
+        console.error(&#x27;Error fetching total lead count: &#x27;, error);
+      }
+    );
+
+    this.dashboardService.getTotalLostLeadCount().subscribe(
+      (data) &#x3D;&gt; {
+        this.totalLostLostCount &#x3D; data;
+      },
+      (error) &#x3D;&gt; {
+        console.error(&#x27;Error fetching total lead count: &#x27;, error);
+      }
+    );
+
+    this.dashboardService.getConvertionRateValue().subscribe(
+      (data) &#x3D;&gt; {
+        this.convertionRate &#x3D; data;
+      },
+      (error) &#x3D;&gt; {
+        console.error(&#x27;Error fetching total lead count: &#x27;, error);
+      }
+    );
+  }
+
+  loadAllLeads() {
+    this.dashboardService.getAllWonLeads().subscribe(
+      (data) &#x3D;&gt; {
+        this.leads &#x3D; data;
+      },
+      (error) &#x3D;&gt; {
+        console.error(error);
+      }
+    );
+  }
+
+
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 mt-2&quot; style&#x3D;&quot;justify-content: space-evenly;&quot;&gt;
+  &lt;div class&#x3D;&quot;col&quot; style&#x3D;&quot;width: 300px; height: 200px;&quot;&gt;
+    &lt;div class&#x3D;&quot;card card-cover  text-white bg-dark rounded-5 shadow-lg&quot; style&#x3D;&quot;background-image: url(&#x27;unsplash-photo-1.jpg&#x27;);&quot;&gt;
+      &lt;div class&#x3D;&quot;d-flex flex-column pb-3 text-white text-shadow-1&quot; style&#x3D;&quot;margin-left: 12px;&quot;&gt;
+        &lt;h2 class&#x3D;&quot; mt-5 mb-4 display-3 lh-1 fw-bold&quot;&gt;Total Potential Revenue&lt;/h2&gt;
+        &lt;p&gt;{{ totalExpectedRevenue }}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;col&quot; style&#x3D;&quot;width: 300px; height: 200px;&quot;&gt;
+    &lt;div class&#x3D;&quot;card card-cover  text-white bg-dark rounded-5 shadow-lg&quot; style&#x3D;&quot;background-image: url(&#x27;unsplash-photo-1.jpg&#x27;);&quot;&gt;
+      &lt;div class&#x3D;&quot;d-flex flex-column pb-3 text-white text-shadow-1&quot; style&#x3D;&quot;margin-left: 12px;&quot;&gt;
+        &lt;h2 class&#x3D;&quot; mt-5 mb-4 display-3 lh-1 fw-bold&quot;&gt;Total Weighted Revenue&lt;/h2&gt;
+        &lt;p&gt;{{ totalWeightedRevenue }}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;col&quot; style&#x3D;&quot;width: 300px; height: 200px;&quot;&gt;
+    &lt;div class&#x3D;&quot;card card-cover  text-white bg-dark rounded-5 shadow-lg&quot; style&#x3D;&quot;background-image: url(&#x27;unsplash-photo-1.jpg&#x27;);&quot;&gt;
+      &lt;div class&#x3D;&quot;d-flex flex-column pb-3 text-white text-shadow-1&quot; style&#x3D;&quot;margin-left: 12px;&quot;&gt;
+        &lt;h2 class&#x3D;&quot; mt-5 mb-4 display-3 lh-1 fw-bold&quot;&gt;Total Lead Count&lt;/h2&gt;
+        &lt;p&gt;{{ totalLeadCount }}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  &lt;div class&#x3D;&quot;col&quot; style&#x3D;&quot;width: 300px; height: 200px;&quot;&gt;
+    &lt;div class&#x3D;&quot;card card-cover  text-white bg-dark rounded-5 shadow-lg&quot; style&#x3D;&quot;background-image: url(&#x27;unsplash-photo-1.jpg&#x27;);&quot;&gt;
+      &lt;div class&#x3D;&quot;d-flex flex-column pb-3 text-white text-shadow-1&quot; style&#x3D;&quot;margin-left: 12px;&quot;&gt;
+        &lt;h2 class&#x3D;&quot; mt-5 mb-4 display-3 lh-1 fw-bold&quot;&gt;Total Won Lead&lt;/h2&gt;
+        &lt;p&gt;{{ totalWonLeadCount }}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;col&quot; style&#x3D;&quot;width: 300px; height: 200px;&quot;&gt;
+    &lt;div class&#x3D;&quot;card card-cover  text-white bg-dark rounded-5 shadow-lg&quot; style&#x3D;&quot;background-image: url(&#x27;unsplash-photo-1.jpg&#x27;);&quot;&gt;
+      &lt;div class&#x3D;&quot;d-flex flex-column pb-3 text-white text-shadow-1&quot; style&#x3D;&quot;margin-left: 12px;&quot;&gt;
+        &lt;h2 class&#x3D;&quot; mt-5 mb-4 display-3 lh-1 fw-bold&quot;&gt;Total Lost Lead&lt;/h2&gt;
+        &lt;p&gt;{{ totalLostLostCount }}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;col&quot; style&#x3D;&quot;width: 300px; height: 200px;&quot;&gt;
+    &lt;div class&#x3D;&quot;card card-cover  text-white bg-dark rounded-5 shadow-lg&quot; style&#x3D;&quot;background-image: url(&#x27;unsplash-photo-1.jpg&#x27;);&quot;&gt;
+      &lt;div class&#x3D;&quot;d-flex flex-column pb-3 text-white text-shadow-1&quot; style&#x3D;&quot;margin-left: 12px;&quot;&gt;
+        &lt;h2 class&#x3D;&quot; mt-5 mb-4 display-3 lh-1 fw-bold&quot;&gt;Lead Convertion Rate&lt;/h2&gt;
+        &lt;p&gt;{{ convertionRate }}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;!-- table --&gt;
+
+&lt;div style&#x3D;&quot;padding-top: 10px;&quot;&gt;
+  &lt;table class&#x3D;&quot;table table-striped table-hover&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;No&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Name&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Company&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;State&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Email&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Status&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Created Date&lt;/th&gt;
+       &lt;!-- Added Actions column for buttons --&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr *ngFor&#x3D;&quot;let lead of leads; let i &#x3D; index&quot;&gt;
+        &lt;th scope&#x3D;&quot;row&quot;&gt;{{ i + 1 }}&lt;/th&gt;
+        &lt;td&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/lead-detail&#x27;, lead.leadId]&quot;&gt;{{ lead.newLead.name }}&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;{{ lead.newLead.companyName }}&lt;/td&gt;
+        &lt;td&gt;{{ lead.newLead.state }}&lt;/td&gt;
+        &lt;td&gt;{{ lead.newLead.email }}&lt;/td&gt;
+        &lt;td&gt;{{ lead.newLead.status }}&lt;/td&gt;
+        &lt;td&gt;{{ lead.newLead.createdDate | date: &#x27;dd-MM-yyyy&#x27; }}&lt;/td&gt;
+
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./reports.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.custom{
+  padding-top: 150px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 mt-2" style="justify-content: space-evenly;">  <div class="col" style="width: 300px; height: 200px;">    <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg" style="background-image: url(\'unsplash-photo-1.jpg\');">      <div class="d-flex flex-column pb-3 text-white text-shadow-1" style="margin-left: 12px;">        <h2 class=" mt-5 mb-4 display-3 lh-1 fw-bold">Total Potential Revenue</h2>        <p>{{ totalExpectedRevenue }}</p>      </div>    </div>  </div>  <div class="col" style="width: 300px; height: 200px;">    <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg" style="background-image: url(\'unsplash-photo-1.jpg\');">      <div class="d-flex flex-column pb-3 text-white text-shadow-1" style="margin-left: 12px;">        <h2 class=" mt-5 mb-4 display-3 lh-1 fw-bold">Total Weighted Revenue</h2>        <p>{{ totalWeightedRevenue }}</p>      </div>    </div>  </div>  <div class="col" style="width: 300px; height: 200px;">    <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg" style="background-image: url(\'unsplash-photo-1.jpg\');">      <div class="d-flex flex-column pb-3 text-white text-shadow-1" style="margin-left: 12px;">        <h2 class=" mt-5 mb-4 display-3 lh-1 fw-bold">Total Lead Count</h2>        <p>{{ totalLeadCount }}</p>      </div>    </div>  </div>  <div class="col" style="width: 300px; height: 200px;">    <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg" style="background-image: url(\'unsplash-photo-1.jpg\');">      <div class="d-flex flex-column pb-3 text-white text-shadow-1" style="margin-left: 12px;">        <h2 class=" mt-5 mb-4 display-3 lh-1 fw-bold">Total Won Lead</h2>        <p>{{ totalWonLeadCount }}</p>      </div>    </div>  </div>  <div class="col" style="width: 300px; height: 200px;">    <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg" style="background-image: url(\'unsplash-photo-1.jpg\');">      <div class="d-flex flex-column pb-3 text-white text-shadow-1" style="margin-left: 12px;">        <h2 class=" mt-5 mb-4 display-3 lh-1 fw-bold">Total Lost Lead</h2>        <p>{{ totalLostLostCount }}</p>      </div>    </div>  </div>  <div class="col" style="width: 300px; height: 200px;">    <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg" style="background-image: url(\'unsplash-photo-1.jpg\');">      <div class="d-flex flex-column pb-3 text-white text-shadow-1" style="margin-left: 12px;">        <h2 class=" mt-5 mb-4 display-3 lh-1 fw-bold">Lead Convertion Rate</h2>        <p>{{ convertionRate }}</p>      </div>    </div>  </div></div><!-- table --><div style="padding-top: 10px;">  <table class="table table-striped table-hover">    <thead>      <tr>        <th scope="col">No</th>        <th scope="col">Name</th>        <th scope="col">Company</th>        <th scope="col">State</th>        <th scope="col">Email</th>        <th scope="col">Status</th>        <th scope="col">Created Date</th>       <!-- Added Actions column for buttons -->      </tr>    </thead>    <tbody>      <tr *ngFor="let lead of leads; let i = index">        <th scope="row">{{ i + 1 }}</th>        <td><a [routerLink]="[\'/lead-detail\', lead.leadId]">{{ lead.newLead.name }}</a></td>        <td>{{ lead.newLead.companyName }}</td>        <td>{{ lead.newLead.state }}</td>        <td>{{ lead.newLead.email }}</td>        <td>{{ lead.newLead.status }}</td>        <td>{{ lead.newLead.createdDate | date: \'dd-MM-yyyy\' }}</td>      </tr>    </tbody>  </table></div></div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountDetailsComponent', 'selector': 'app-account-details'},{'name': 'AccountFormComponent', 'selector': 'app-account-form'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'ContactDetailsComponent', 'selector': 'app-contact-details'},{'name': 'ContactFormComponent', 'selector': 'app-contact-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EditFormComponent', 'selector': 'app-edit-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LeadComponent', 'selector': 'app-lead'},{'name': 'LeadDetailsComponent', 'selector': 'app-lead-details'},{'name': 'LeadFormComponent', 'selector': 'app-lead-form'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'OpportunityComponent', 'selector': 'app-opportunity'},{'name': 'OpportunityDetailsComponent', 'selector': 'app-opportunity-details'},{'name': 'OpportunityFormComponent', 'selector': 'app-opportunity-form'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReportsComponent', 'selector': 'app-reports'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ReportsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ReportsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
