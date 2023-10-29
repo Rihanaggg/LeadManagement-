@@ -134,5 +134,13 @@ public class OpportunityService {
         throw new OpportunityNotFoundException("Opportunity with ID " + opportunityId + " not found");
     }
     
+    public List<Opportunity> findOpportunitiesByPartialAccountName(String partialAccountName) {
+        return opportunityRepository.findByAccountNameContaining(partialAccountName);
+    }
+    
+    public List<Opportunity> findOpportunitiesByPartialProducts(String partialProducts) {
+        return opportunityRepository.findByProductsContaining(partialProducts);
+    }
+    
 
 }

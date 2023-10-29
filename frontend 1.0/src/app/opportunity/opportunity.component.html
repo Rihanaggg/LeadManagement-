@@ -17,6 +17,22 @@
 
         <button type="submit" class="btn btn-primary ms-auto" (click)="callFunction()">New</button>
 
+        <!-- <div class="input-group custom-box ms-2">
+          <input [(ngModel)]="searchQuery" type="text" class="form-control custom-input"
+            aria-label="Text input with segmented dropdown button">
+          <button type="button" class="btn btn-outline-secondary" (click)="searchOpportunities()">Search</button>
+          <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button> -->
+          <!-- <ul class="dropdown-menu dropdown-menu-end">
+            <li class="dropdown-item" [value]="'name'" (click)="searchType='name'">Name</li>
+            <li class="dropdown-item" [value]="'status'" (click)="searchType='status'">Status</li>
+            <li class="dropdown-item" [value]="'companyName'" (click)="searchType='companyName'">Company Name</li>
+            <li class="dropdown-item" [value]="'state'" (click)="searchType='state'">State</li>
+            <li class="dropdown-item" [value]="'email'" (click)="searchType='email'">Email</li>
+          </ul> -->
+        <!-- </div> -->
         <div class="input-group custom-box ms-2">
           <input [(ngModel)]="searchQuery" type="text" class="form-control custom-input"
             aria-label="Text input with segmented dropdown button">
@@ -25,14 +41,12 @@
             data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
-          <!-- <ul class="dropdown-menu dropdown-menu-end">
-            <li class="dropdown-item" [value]="'name'" (click)="searchType='name'">Name</li>
-            <li class="dropdown-item" [value]="'status'" (click)="searchType='status'">Status</li>
-            <li class="dropdown-item" [value]="'companyName'" (click)="searchType='companyName'">Company Name</li>
-            <li class="dropdown-item" [value]="'state'" (click)="searchType='state'">State</li>
-            <li class="dropdown-item" [value]="'email'" (click)="searchType='email'">Email</li>
-          </ul> -->
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li class="dropdown-item" [value]="'accountName'" (click)="searchType='accountName'">Account Name</li>
+            <li class="dropdown-item" [value]="'products'" (click)="searchType='products'">Products</li>
+          </ul>
         </div>
+
       </div>
 
     </div>

@@ -46,23 +46,29 @@ public class OpportunityController {
     @PostMapping("/create")
     public ResponseEntity<String> createOpportunity(@RequestBody OpportunityFormDTO opportunityFormDTO) {
         try {
-            Opportunity opportunity = opportunityService.createOpportunity(opportunityFormDTO, null); // Assuming you don't pass an account for creation
-            return new ResponseEntity<>("Opportunity created successfully with ID: " + opportunity.getId(), HttpStatus.CREATED);
+            Opportunity opportunity = opportunityService.createOpportunity(opportunityFormDTO, null); // Assuming you
+                                                                                                      // don't pass an
+                                                                                                      // account for
+                                                                                                      // creation
+            return new ResponseEntity<>("Opportunity created successfully with ID: " + opportunity.getId(),
+                    HttpStatus.CREATED);
         } catch (Exception e) {
-            return new ResponseEntity<>("Error creating opportunity: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Error creating opportunity: " + e.getMessage(),
+                    HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PatchMapping("/updatebyId/{opportunityId}")
-    public ResponseEntity<Opportunity> updateOpportunityAttributes( @PathVariable Long opportunityId, @RequestBody OpportunityFormDTO updatedAttributes) 
-    {
-    Opportunity updatedOpportunity = opportunityService.updateOpportunityByAttribute(opportunityId, updatedAttributes);
-    return ResponseEntity.ok(updatedOpportunity);
+    public ResponseEntity<Opportunity> updateOpportunityAttributes(@PathVariable Long opportunityId,
+            @RequestBody OpportunityFormDTO updatedAttributes) {
+        Opportunity updatedOpportunity = opportunityService.updateOpportunityByAttribute(opportunityId,
+                updatedAttributes);
+        return ResponseEntity.ok(updatedOpportunity);
     }
 
-
     @PutMapping("/update/{opportunityId}")
-    public ResponseEntity<Opportunity> updateOpportunity(@PathVariable Long opportunityId, @RequestBody OpportunityFormDTO updatedFormDTO) {
+    public ResponseEntity<Opportunity> updateOpportunity(@PathVariable Long opportunityId,
+            @RequestBody OpportunityFormDTO updatedFormDTO) {
         Opportunity updatedOpportunity = opportunityService.updateOpportunity(opportunityId, updatedFormDTO);
         return ResponseEntity.ok(updatedOpportunity);
     }
@@ -71,4 +77,29 @@ public class OpportunityController {
     public List<Opportunity> searchOpportunitiesByStatus(@RequestParam String status) {
         return opportunityService.searchOpportunitiesByStatus(status);
     }
+
+    @GetMapping("/search/accountName")
+    public List<Opportunity> findOpportunitiesByPartialAccountName(@RequestParam String partialAccountName) {
+        return opportunityService.findOpportunitiesByPartialAccountName(partialAccountName);
+    }
+
+    @GetMapping("/search/products")
+    public List<Opportunity> findOpportunitiesByPartialProducts(@RequestParam String partialProducts) {
+        return opportunityService.findOpportunitiesByPartialProducts(partialProducts);
+    }
+
+    @GetMapping("/search")
+    public List<Opportunity> searchOpportunities(
+            @RequestParam String searchType,
+            @RequestParam String query) {
+        switch (searchType) {
+            case "accountName":
+                return opportunityService.findOpportunitiesByPartialAccountName(query);
+            case "products":
+                return opportunityService.findOpportunitiesByPartialProducts(query);
+            default:
+                throw new IllegalArgumentException("Invalid search type: " + searchType);
+        }
+    }
+
 }

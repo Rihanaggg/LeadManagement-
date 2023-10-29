@@ -47,15 +47,32 @@ export class OpportunityComponent implements OnInit {
   //     this.loadAllOpportunity(); // If search fields are empty, load all leads
   //   }
   // }
-
   searchOpportunities() {
-    const status = 'closed Won'; // Replace with the status you want to search
-    this.opportunityService.searchOpportunitiesByStatus(status)
-      .subscribe(data => {
-        // Handle the returned data here
-        console.log(data);
-      });
+    if (this.searchType && this.searchQuery) {
+      this.opportunityService.searchOpportunities(this.searchType, this.searchQuery).subscribe(
+        (data) => {
+          this.opportunities = data;
+          console.log(this.opportunities);
+          
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    } else {
+      this.loadAllOpportunity(); // If search fields are empty, load all opportunities
+    }
   }
+
+
+  // searchOpportunities() {
+  //   const status = 'closed Won'; // Replace with the status you want to search
+  //   this.opportunityService.searchOpportunitiesByStatus(status)
+  //     .subscribe(data => {
+  //       // Handle the returned data here
+  //       console.log(data);
+  //     });
+  // }
 
   callFunction() {
     this.router.navigate(['/opportunity-form']);

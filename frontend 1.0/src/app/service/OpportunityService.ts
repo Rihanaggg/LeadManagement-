@@ -43,12 +43,6 @@ console.log();
     return this.http.get<OpportunityFormDTO[]>(`${this.apiUrl}/search/status?status=${status}`);
   }
 
-  // searchOpportunities(searchType: string, query: string): Observable<any> {
-  //   const headers = new HttpHeaders({
-  //     'Authorization': 'Bearer ' + localStorage.getItem('token')
-  //   });
-  //   return this.http.get(`${this.apiUrl}/search?searchType=${searchType}&query=${query}`, { headers });
-  // }
 
   patchOpportunity(id: number, OpportunityFormDTO: any): Observable<OpportunityFormDTO> {
 
@@ -57,4 +51,11 @@ console.log();
     return this.http.patch<OpportunityFormDTO>(url, OpportunityFormDTO);
 
 }
+
+searchOpportunities(searchType: string, query: string): Observable<OpportunityFormDTO[]> {
+  const url = `${this.apiUrl}/search`;
+
+  return this.http.get<OpportunityFormDTO[]>(url, { params: { searchType, query } });
+}
+
 }
