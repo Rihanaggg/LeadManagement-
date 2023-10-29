@@ -3,12 +3,12 @@
 **Author of Problem Statement:** Prashant  
 **Date:** 10/10/2023
 
-- [ ] [Backend Code](url_to_backend_code)
+- [x] [Backend Code](https://github.com/Rihanaggg/LeadManagement-/tree/main/backend%201.0)
 - [ ] [API Documentation](url_to_api_docs)
-- [ ] [Frontend Code](url_to_frontend_code)
+- [x] [Frontend Code](https://github.com/Rihanaggg/LeadManagement-/tree/main/frontend%201.0)
 - [ ] [Frontend Documentation](url_to_frontend_docs)
-- [ ] [ER Diagram](url_to_er_diagram)
-- [ ] [Test Coverage](url_to_test_coverage)
+- [x] [ER Diagram](https://github.com/Rihanaggg/LeadManagement-/blob/main/ER%20diagram.png)
+- [x] [Test Coverage](https://github.com/Rihanaggg/LeadManagement-/blob/main/jacoco%20test%20Coverage.png)
 
 
 ## Table of Contents
