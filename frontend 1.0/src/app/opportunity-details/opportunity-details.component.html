@@ -14,17 +14,16 @@
           <div class="row">
 
             <div class="col-md-6 mb-3">
-              <!-- <label class="form-label">Required Quantity</label>
-              <p>{{ opportunity.requiredQuantity }}</p> -->
 
-              <p>Required Quantity: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.requiredQuantity }}</span></p>
 
-          <input type="text" *ngIf="editMode" [(ngModel)]="opportunity.requiredQuantity" (keyup.enter)="saveAll()">
+              <p>Required Quantity: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.requiredQuantity
+                  }}</span></p>
+
+              <input type="text" *ngIf="editMode" [(ngModel)]="opportunity.requiredQuantity" (keyup.enter)="saveAll()">
 
             </div>
             <div class="col-md-6 mb-3">
-              <!-- <label class="form-label">Products</label>
-              <p>{{ opportunity.products }}</p> -->
+
 
               <p>Products: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.products }}</span></p>
 
@@ -40,13 +39,12 @@
               </select>
             </div>
             <div class="col-md-6 mb-3">
-              <!-- <label class="form-label">Status</label>
-              <p>{{ opportunity.status }}</p> -->
+
 
               <p>Status: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.status }}</span></p>
 
 
-              <select *ngIf="editMode" [(ngModel)]="opportunity.status" (change)="saveAll()" class="form-select" >
+              <select *ngIf="editMode" [(ngModel)]="opportunity.status" (change)="saveAll()" class="form-select">
                 <option value="Qualified">Qualified</option>
                 <option value="Proposition">Proposition</option>
                 <option value="Negotiation">Negotiation</option>
@@ -56,12 +54,11 @@
 
             </div>
             <div class="col-md-6 mb-3">
-              <!-- <label class="form-label">Probability</label>
-              <p>{{ opportunity.probability }}</p> -->
+
 
               <p>Probability: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.probability }}</span></p>
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="opportunity.probability" (keyup.enter)="saveAll()">
+              <input type="text" *ngIf="editMode" [(ngModel)]="opportunity.probability" (keyup.enter)="saveAll()">
             </div>
 
 
@@ -85,42 +82,36 @@
         <div class="accordion-body">
           <div class="row">
             <div class="col-md-6 mb-3">
-              <!-- <label class="form-label">Account Name</label>
-              <p>{{ opportunity.accountName }}</p> -->
 
-              <p>Account Name: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.accountName }}</span></p>
+              <p>Account Name: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.accountName }}</span>
+              </p>
 
               <input type="text" *ngIf="editMode" [(ngModel)]="opportunity.accountName" (keyup.enter)="saveAll()">
 
             </div>
             <div class="col-md-6 mb-3">
-              <!-- <label class="form-label">Expected Revenue</label> -->
-              <!-- <p>{{ opportunity.expectedRevenue }}</p> -->
 
-              <p>Expected Revenue: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.expectedRevenue }}</span></p>
+
+              <p>Expected Revenue: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.expectedRevenue
+                  }}</span></p>
 
               <input type="text" *ngIf="editMode" [(ngModel)]="opportunity.expectedRevenue" (keyup.enter)="saveAll()">
 
             </div>
-            <!-- <div class="col-md-6 mb-3">
-              <label class="form-label">Closing Date</label>
-              <p>{{ opportunity.expectedClosingDate }}</p>
-            </div> -->
-            <div class="col-md-6 mb-3">
-              <!-- <label class="form-label">Closing Date</label>
-              <p>{{ opportunity.expectedClosingDate | date: 'dd-MM-yyyy' }}</p> -->
 
-              <p>Closing Date: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.expectedClosingDate | date: 'dd-MM-yyyy'}}</span></p>
+            <div class="col-md-6 mb-3">
+
+
+              <p>Closing Date: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.expectedClosingDate |
+                  date: 'dd-MM-yyyy'}}</span></p>
 
               <input type="date" *ngIf="editMode" [(ngModel)]="opportunity.expectedClosingDate" (change)="saveAll()">
 
             </div>
             <div class="col-md-6 mb-3">
-              <!-- <label class="form-label">Source</label>
-              <p>{{ opportunity.source }}</p> -->
 
               <p>Source: <span *ngIf="!editMode" (click)="editMode = true">{{ opportunity.source }}</span></p>
-              <select *ngIf="editMode" [(ngModel)]="opportunity.source" (change)="saveAll()" class="form-select" >
+              <select *ngIf="editMode" [(ngModel)]="opportunity.source" (change)="saveAll()" class="form-select">
                 <option value="Web">Web</option>
                 <option value="Phone Inquiry">Phone Inquiry</option>
                 <option value="Referral">Referral</option>

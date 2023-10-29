@@ -38,6 +38,7 @@ const routes: Routes = [
   { path: 'contact-detail/:contactId', component: ContactDetailsComponent ,canActivate: [AuthGuard]},
   { path: 'opportunity-form', component: OpportunityFormComponent ,canActivate: [AuthGuard] },
   { path: 'opportunity-detail/:oppId', component: OpportunityDetailsComponent ,canActivate: [AuthGuard]},
+
 ];
 
 @NgModule({

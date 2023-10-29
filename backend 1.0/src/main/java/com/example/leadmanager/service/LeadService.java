@@ -326,6 +326,8 @@ if(loggedInUser.isPresent()){
                 account.setRegion(newLead.getRegion());
                 account.setTypeOfBusiness(newLead.getTypeOfBusiness());
                 account.setWebsite(newLead.getWebsite());
+                account.setEmail(newLead.getEmail());
+                account.setActive("Yes");
                 accountRepository.save(account);
 
 

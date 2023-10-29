@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LeadService } from '../service/lead.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class LeadDetailsComponent {
   expectedRevenue:'',createdDate:'',
   products:''};
 
-  constructor(private route: ActivatedRoute, private leadService: LeadService) {}
+  constructor(private route: ActivatedRoute, private leadService: LeadService,private router:Router) {}
 
 
   ngOnInit() {
@@ -32,7 +32,6 @@ export class LeadDetailsComponent {
     this.leadService.getLeadById(leadId).subscribe(data => {
       this.lead = data;
     });
-
   }
 
 
@@ -101,7 +100,8 @@ export class LeadDetailsComponent {
       if (this.leadId) {
         this.leadService.updateLeadStatus(this.leadId, newStatus).subscribe(
           response => {
-            console.log(response); // Handle success
+            console.log(response);
+
           },
           error => {
             console.error(error); // Handle error
@@ -111,5 +111,9 @@ export class LeadDetailsComponent {
         console.error('Lead ID is not defined');
       }
     }
+
+
+
+
 
 }

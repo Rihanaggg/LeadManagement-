@@ -78,3 +78,22 @@
 .tabHeader:hover {
   background-color: #ddd; /* Add hover background color as needed */
 }
+.d-flex {
+  display: flex;
+}
+
+.button {
+  margin-right: 2px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.input-group.custom-box {
+  /* Add your custom styles for this element */
+}
+.active-button {
+  background-color: #007bff; /* or any other color you want for active buttons */
+  color: #fff;
+}

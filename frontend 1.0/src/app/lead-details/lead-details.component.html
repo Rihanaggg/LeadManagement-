@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <p class="navbar-brand">
       <img src="/assets/images/group.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      {{ lead.newLead.name }}
+      Name :{{ lead.newLead.name }}
     </p>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,78 +10,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <p>Company Name: {{ lead.newLead.companyName }}</p>
+        <!-- <p>Company Name: {{ lead.newLead.companyName }}</p> -->
       </ul>
 
-      <!-- Move the 'New' button and search form to the right -->
+
       <div class="d-flex">
-        <button (click)="updateLeadStatus('New')">New</button>
-        <button (click)="updateLeadStatus('Qualified')">Qualified</button>
-        <button (click)="updateLeadStatus('Proposition')"> Proposition</button>
-        <button (click)="updateLeadStatus('Negotiation')">Negotiation</button>
-        <button (click)="updateLeadStatus('Won')">Won</button>
-
-        <button (click)="updateLeadStatus('Lost')">Lost</button>
-
-        <!-- <ul role="listbox" aria-orientation="horizontal" class="slds-path__nav" aria-label="Path Options">
-          <li role="presentation" class="slds-path__item" data-name="New">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="New" class="tabHeader slds-path__link" >
-              <span class="title slds-path__title">New</span>
-            </a>
-          </li>
-          <li role="presentation" class="slds-path__item" data-name="Qualified">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="Qualified" class="tabHeader slds-path__link" >
-              <span class="title slds-path__title" >Qualified</span>
-            </a>
-          </li>
-          <li role="presentation" class="slds-path__item" data-name="Proposition">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="Proposition" class="tabHeader slds-path__link" href="javascript:void(0);">
-              <span class="title slds-path__title" >Proposition</span>
-            </a>
-          </li>
-          <li role="presentation" class="slds-path__item" data-name="Negotiation">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="Negotiation" class="tabHeader slds-path__link" href="javascript:void(0);">
-              <span class="title slds-path__title" >Negotiation</span>
-            </a>
-          </li>
-          <li role="presentation" class="slds-path__item" data-name="Won">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="Won" class="tabHeader slds-path__link" href="javascript:void(0);">
-              <span class="title slds-path__title" >Won</span>
-            </a>
-          </li>
-        </ul> -->
-
-        <!-- <ul role="listbox" aria-orientation="horizontal" class="slds-path__nav" aria-label="Path Options">
-          <li role="presentation" class="slds-path__item" data-name="New">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="New" class="tabHeader slds-path__link" (click)="updateLeadStatus('New')">
-              <span class="title slds-path__title">New</span>
-            </a>
-          </li>
-          <li role="presentation" class="slds-path__item" data-name="Qualified">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="Qualified" class="tabHeader slds-path__link" (click)="updateLeadStatus('Qualified')">
-              <span class="title slds-path__title">Qualified</span>
-            </a>
-          </li>
-          <li role="presentation" class="slds-path__item" data-name="Proposition">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="Proposition" class="tabHeader slds-path__link" (click)="updateLeadStatus('Proposition')">
-              <span class="title slds-path__title">Proposition</span>
-            </a>
-          </li>
-          <li role="presentation" class="slds-path__item" data-name="Negotiation">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="Negotiation" class="tabHeader slds-path__link" (click)="updateLeadStatus('Negotiation')">
-              <span class="title slds-path__title">Negotiation</span>
-            </a>
-          </li>
-          <li role="presentation" class="slds-path__item" data-name="Won">
-            <a aria-selected="false" aria-current="false" role="option" tabindex="-1" title="Won" class="tabHeader slds-path__link" (click)="updateLeadStatus('Won')">
-              <span class="title slds-path__title">Won</span>
-            </a>
-          </li>
-        </ul> -->
-
+        <button class="button" (click)="updateLeadStatus('New')" [ngClass]="{'active-button': lead.newLead.status === 'New'}">New</button>
+        <button class="button" (click)="updateLeadStatus('Qualified')" [ngClass]="{'active-button': lead.newLead.status === 'Qualified'}">Qualified</button>
+        <button class="button" (click)="updateLeadStatus('Proposition')"  [ngClass]="{'active-button': lead.newLead.status === 'Proposition'}"> Proposition</button>
+        <button class="button" (click)="updateLeadStatus('Negotiation')"  [ngClass]="{'active-button': lead.newLead.status === 'Negotiation'}">Negotiation</button>
+        <button class="button" (click)="updateLeadStatus('Won')" [ngClass]="{'active-button': lead.newLead.status === 'Won'}">Won</button>
+        <button class="button" (click)="updateLeadStatus('Lost')" [ngClass]="{'active-button': lead.newLead.status === 'Lost'}">Lost</button>
         <div class="input-group custom-box ms-2"></div>
       </div>
 
+      <!-- <div class="d-flex">
+        <button class="button" (click)="updateLeadStatus('New')">New</button>
+        <button class="button" (click)="updateLeadStatus('Qualified')">Qualified</button>
+        <button class="button" (click)="updateLeadStatus('Proposition')"> Proposition</button>
+        <button class="button" (click)="updateLeadStatus('Negotiation')">Negotiation</button>
+        <button class="button" (click)="updateLeadStatus('Won')">Won</button>
+        <button class="button" (click)="updateLeadStatus('Lost')">Lost</button>
+        <div class="input-group custom-box ms-2"></div>
+      </div> -->
     </div>
   </div>
 </nav>
@@ -107,96 +58,90 @@
               <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.name" (keyup.enter)="saveAll()">
 
             </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>Company Name:<span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.companyName }}</span></p>
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.companyName" (keyup.enter)="saveAll()">
+            <div class="col-md-6 mb-3">
+              <p>Company Name:<span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.companyName }}</span>
+              </p>
 
-            <!-- <p>{{ lead.newLead.companyName }}</p> -->
-          </div>
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.companyName" (keyup.enter)="saveAll()">
 
-          <div class="col-md-6 mb-3">
-            <p>Eamil: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.email }}</span></p>
+            </div>
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.email" (keyup.enter)="saveAll()">
+            <div class="col-md-6 mb-3">
+              <p>Eamil: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.email }}</span></p>
 
-            <!-- <p>{{ lead.newLead.email }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>Phone: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.phone }}</span></p>
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.email" (keyup.enter)="saveAll()">
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.phone" (keyup.enter)="saveAll()">
+            </div>
+            <div class="col-md-6 mb-3">
+              <p>Phone: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.phone }}</span></p>
 
-            <!-- <p>{{ lead.newLead.phone }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>Job Title: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.jobTitle }}</span></p>
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.phone" (keyup.enter)="saveAll()">
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.jobTitle" (keyup.enter)="saveAll()">
+            </div>
+            <div class="col-md-6 mb-3">
+              <p>Job Title: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.jobTitle }}</span></p>
+
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.jobTitle" (keyup.enter)="saveAll()">
 
 
-            <!-- <p>{{ lead.newLead.jobTitle }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>Website: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.website }}</span></p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p>Website: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.website }}</span></p>
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.website" (keyup.enter)="saveAll()">
-
-
-            <!-- <p>{{ lead.newLead.website }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>Type of Business: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.typeOfBusiness
-                }}</span></p>
-
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.typeOfBusiness" (keyup.enter)="saveAll()">
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.website" (keyup.enter)="saveAll()">
 
 
-            <!-- <p>{{ lead.newLead.typeOfBusiness }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>Status: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.status }}</span></p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p>Type of Business: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.typeOfBusiness
+                  }}</span></p>
 
-            <!-- <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.status" (keyup.enter)="saveAll()"> -->
-            <select *ngIf="editMode" [(ngModel)]="lead.newLead.status" (change)="saveAll()" class="form-select">
-              <option value="New">New</option>
-              <option value="Qualified">Qualified</option>
-              <option value="Proposition">Proposition</option>
-              <option value="Negotiation">Negotiation</option>
-              <option value="Won">Won</option>
-            </select>
-
-            <!-- <p>{{ lead.newLead.status }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>Source: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.source }}</span></p>
-
-            <!-- <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.source" (keyup.enter)="saveAll()"> -->
-            <select *ngIf="editMode" [(ngModel)]="lead.newLead.source" (change)="saveAll()" class="form-select" >
-              <option value="Web">Web</option>
-              <option value="Phone Inquiry">Phone Inquiry</option>
-              <option value="Referral">Referral</option>
-            </select>
-
-            <!-- <p>{{ lead.newLead.source }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>Probability: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.probability }}</span></p>
-
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.probability" (keyup.enter)="saveAll()">
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.typeOfBusiness" (keyup.enter)="saveAll()">
 
 
-            <!-- <p>{{ lead.newLead.probability }}</p> -->
-          </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p>Status: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.status }}</span></p>
 
-          <div class="col-md-6 mb-3">
-            <p>Creation Date: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.createdDate | date: 'dd-MM-yyyy' }}</span></p>
+              <select *ngIf="editMode" [(ngModel)]="lead.newLead.status" (change)="saveAll()" class="form-select">
+                <option value="New">New</option>
+                <option value="Qualified">Qualified</option>
+                <option value="Proposition">Proposition</option>
+                <option value="Negotiation">Negotiation</option>
+                <option value="Won">Won</option>
+              </select>
 
-            <input type="date" *ngIf="editMode" [(ngModel)]="lead.newLead.createdDate" (keyup.enter)="saveAll()">
+            </div>
+            <div class="col-md-6 mb-3">
+              <p>Source: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.source }}</span></p>
+
+              <select *ngIf="editMode" [(ngModel)]="lead.newLead.source" (change)="saveAll()" class="form-select">
+                <option value="Web">Web</option>
+                <option value="Phone Inquiry">Phone Inquiry</option>
+                <option value="Referral">Referral</option>
+              </select>
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <p>Probability: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.probability }}</span>
+              </p>
+
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.probability" (keyup.enter)="saveAll()">
 
 
-            <!-- <p>{{ lead.newLead.probability }}</p> -->
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <p>Creation Date: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.createdDate | date:
+                  'dd-MM-yyyy' }}</span></p>
+
+              <input type="date" *ngIf="editMode" [(ngModel)]="lead.newLead.createdDate" (keyup.enter)="saveAll()">
+
+
+
+            </div>
           </div>
         </div>
       </div>
@@ -206,99 +151,97 @@
 
 
 
-  <!-- Address Information Accordion -->
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="addressInfoHeading">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-        data-bs-target="#addressInfoCollapse" aria-expanded="false" aria-controls="addressInfoCollapse">
-        Address Information
-      </button>
-    </h2>
-    <div id="addressInfoCollapse" class="accordion-collapse collapse" aria-labelledby="addressInfoHeading">
-      <div class="accordion-body">
-        <div class="row">
-          <div class="col-md-6 mb-3">
+    <!-- Address Information Accordion -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="addressInfoHeading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#addressInfoCollapse" aria-expanded="false" aria-controls="addressInfoCollapse">
+          Address Information
+        </button>
+      </h2>
+      <div id="addressInfoCollapse" class="accordion-collapse collapse" aria-labelledby="addressInfoHeading">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
 
-            <p>Address: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.address }}</span></p>
+              <p>Address: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.address }}</span></p>
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.address" (keyup.enter)="saveAll()">
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.address" (keyup.enter)="saveAll()">
 
-            <!-- <p>{{ lead.newLead.address }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
 
-            <p>State: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.state }}</span></p>
+            </div>
+            <div class="col-md-6 mb-3">
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.state" (keyup.enter)="saveAll()">
+              <p>State: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.state }}</span></p>
 
-            <!-- <p>{{ lead.newLead.state }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
-            <p>
-              Region:
-              <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.region }}</span>
-            </p>
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.state" (keyup.enter)="saveAll()">
 
-            <select *ngIf="editMode" [(ngModel)]="lead.newLead.region" (change)="saveAll()" class="form-select">
-              <option value="East">East</option>
-              <option value="West">West</option>
-              <option value="North">North</option>
-              <option value="South">South</option>
-            </select>
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <p>
+                Region:
+                <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.region }}</span>
+              </p>
+
+              <select *ngIf="editMode" [(ngModel)]="lead.newLead.region" (change)="saveAll()" class="form-select">
+                <option value="East">East</option>
+                <option value="West">West</option>
+                <option value="North">North</option>
+                <option value="South">South</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-  <!-- Additional Information Accordion -->
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="additionalInfoHeading">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-        data-bs-target="#additionalInfoCollapse" aria-expanded="false" aria-controls="additionalInfoCollapse">
-        Additional Information
-      </button>
-    </h2>
-    <div id="additionalInfoCollapse" class="accordion-collapse collapse" aria-labelledby="additionalInfoHeading">
-      <div class="accordion-body">
-        <div class="row">
-          <div class="col-md-6 mb-3">
+    <!-- Additional Information Accordion -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="additionalInfoHeading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#additionalInfoCollapse" aria-expanded="false" aria-controls="additionalInfoCollapse">
+          Additional Information
+        </button>
+      </h2>
+      <div id="additionalInfoCollapse" class="accordion-collapse collapse" aria-labelledby="additionalInfoHeading">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
 
-            <p>Required Quantity: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.requiredQuantity
-                }}</span></p>
+              <p>Required Quantity: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.requiredQuantity
+                  }}</span></p>
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.requiredQuantity" (keyup.enter)="saveAll()">
-            <!-- <p>{{ lead.newLead.requiredQuantity }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.requiredQuantity" (keyup.enter)="saveAll()">
+            </div>
+            <div class="col-md-6 mb-3">
 
-            <p>Expected Revenue: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.expectedRevenue
-                }}</span></p>
+              <p>Expected Revenue: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.expectedRevenue
+                  }}</span></p>
 
-            <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.expectedRevenue" (keyup.enter)="saveAll()">
-            <!-- <p>{{ lead.newLead.expectedRevenue }}</p> -->
-          </div>
-          <div class="col-md-6 mb-3">
+              <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.expectedRevenue" (keyup.enter)="saveAll()">
 
-            <p>Products: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.products }}</span></p>
+            </div>
+            <div class="col-md-6 mb-3">
 
-            <!-- <input type="text" *ngIf="editMode" [(ngModel)]="lead.newLead.products" (keyup.enter)="saveAll()"> -->
-            <!-- <p>{{ lead.newLead.products }}</p>-->
-            <select *ngIf="editMode" [(ngModel)]="lead.newLead.products" (change)="saveAll()" class="form-select">
-              <option value="Accounting software">Accounting software</option>
-              <option value="Cloud services">Cloud services</option>
-              <option value="Communication software">Communication software</option>
-              <option value="Content management software">Content management software</option>
-              <option value="Customer service platforms">Customer service platforms</option>
-              <option value="Analytics">Analytics</option>
-              <option value="Cloud storage">Cloud storage</option>
-            </select>
+              <p>Products: <span *ngIf="!editMode" (click)="editMode = true">{{ lead.newLead.products }}</span></p>
+
+
+              <select *ngIf="editMode" [(ngModel)]="lead.newLead.products" (change)="saveAll()" class="form-select">
+                <option value="Accounting software">Accounting software</option>
+                <option value="Cloud services">Cloud services</option>
+                <option value="Communication software">Communication software</option>
+                <option value="Content management software">Content management software</option>
+                <option value="Customer service platforms">Customer service platforms</option>
+                <option value="Analytics">Analytics</option>
+                <option value="Cloud storage">Cloud storage</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-     </div>
-   </div>
+    </div>
 
   </div>
 </div>
