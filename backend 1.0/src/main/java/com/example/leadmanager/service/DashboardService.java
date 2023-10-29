@@ -109,6 +109,9 @@ public class DashboardService {
     statusCounts.put("Proposition", leadRepository.countLeadsByStatus("Proposition"));
     statusCounts.put("Negotiation", leadRepository.countLeadsByStatus("Negotiation"));
     statusCounts.put("Won", leadRepository.countLeadsByStatus("Won"));
+   // statusCounts.put("Won",qualifiedLeadRepository.countNewLeads());
+
+    //countNewLeads();
     return statusCounts;
 }
 

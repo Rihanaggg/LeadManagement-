@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -51,14 +51,71 @@
   </nav>
 
 </body>
-</html>
+</html> -->
 
- <!--
-  <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="#">
+          <img src="/assets/images/crm.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          CRM
+        </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <!-- Your existing navbar items go here -->
+          <li class="nav-item">
+            <a routerLink="/home"  class="nav-link active" aria-current="page" href="#home">Home</a>
           </li>
+          <li class="nav-item">
+            <a routerLink="/lead"  class="nav-link" href="#lead">Lead</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/account" class="nav-link" href="#account">Account</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/contact"  class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/opportunity"  class="nav-link" href="#opportunity">opportunity</a>
+          </li>
+          <li class="nav-item">
+            <a  routerLink="/reports" class="nav-link" href="#reports">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/dashboard"  class="nav-link" href="#dashboard">Dashboard</a>
+          </li>
+        </ul>
 
-  <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
+        <!-- Add the dropdown menu to the right -->
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="/assets/images/user.png" alt="" width="30" height="26" class="d-inline-block align-text-top">
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/login">Login</a>
+              <a class="dropdown-item" routerLink="/register">Register</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</body>
+</html>

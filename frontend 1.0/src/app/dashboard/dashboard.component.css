@@ -16,6 +16,11 @@ canvas {
 }
 
 
+.container-fluid
+{
+  padding-top: 65px;
+}
+
 /* Add any additional global styles here */
 /*
 .chart-container {
